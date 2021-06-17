@@ -144,7 +144,7 @@
             </Grid.ColumnDefinitions>
 
             <!--  Side Menu  -->
-            <Grid />
+            <local:SideMenuControl Height="40" VerticalAlignment="Top"/>
 
             <!--  Content Holder  -->
             <Frame
