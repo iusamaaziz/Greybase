@@ -29,9 +29,10 @@
                                 <!--  Side Bar  -->
                                 <Border
                                     Grid.Column="0"
-                                    Width="6"
-                                    Background="{StaticResource LightBlueBorderLiningBrush}" />
-
+                                    Width="4"
+                                    Background="WhiteSmoke"
+                                    Visibility="{Binding IsActive, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
+                                <!--  Button Icon  -->
                                 <Border Grid.Column="1" Padding="8">
                                     <Border
                                         Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
@@ -41,7 +42,7 @@
                                         <Image Source="{Binding IconPath}" />
                                     </Border>
                                 </Border>
-
+                                <!--  Button Text  -->
                                 <TextBlock
                                     Grid.Column="3"
                                     HorizontalAlignment="Left"
@@ -54,10 +55,10 @@
 
                         </Border>
 
+                        <!--  Hover Animations  -->
                         <ControlTemplate.Triggers>
-
-                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                <Setter TargetName="background" Property="Background" Value="{StaticResource HoverLightBlueBrush}" />
+                            <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                <Setter TargetName="background" Property="Background" Value="{StaticResource SelectedLightBlueBrush}" />
                             </DataTrigger>
 
                             <EventTrigger RoutedEvent="MouseEnter">
@@ -66,7 +67,7 @@
                                         <ColorAnimation
                                             Storyboard.TargetName="container"
                                             Storyboard.TargetProperty="Background.Color"
-                                            To="{StaticResource HoverLightBlue}"
+                                            To="{StaticResource HoverVeryLightBlue}"
                                             Duration="0:0:0.3" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -83,7 +84,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="container" Property="Background" Value="{StaticResource ForegroundDarkBrush}" />
+                                <Setter TargetName="container" Property="Background" Value="{StaticResource HoverDarkBrush}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

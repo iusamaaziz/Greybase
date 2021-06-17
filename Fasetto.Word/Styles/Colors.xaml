@@ -54,9 +54,15 @@
     <Color x:Key="WordGreen">#00c541</Color>
     <SolidColorBrush x:Key="WordGreenBrush" Color="{StaticResource WordGreen}" />
 
-    <Color x:Key="HoverLightBlue">#53C4F6</Color>
+    <Color x:Key="SelectedLightBlue">#53C4F6</Color>
+    <SolidColorBrush x:Key="SelectedLightBlueBrush" Color="{StaticResource SelectedLightBlue}" />
+
+    <Color x:Key="HoverLightBlue">#63C4F6</Color>
     <SolidColorBrush x:Key="HoverLightBlueBrush" Color="{StaticResource HoverLightBlue}" />
 
     <Color x:Key="HoverVeryLightBlue">#84C4F6</Color>
     <SolidColorBrush x:Key="HoverVeryLightBlueBrush" Color="{StaticResource HoverVeryLightBlue}" />
+
+    <Color x:Key="HoverDark">#4D4D4D</Color>
+    <SolidColorBrush x:Key="HoverDarkBrush" Color="{StaticResource HoverDark}" />
 </ResourceDictionary>

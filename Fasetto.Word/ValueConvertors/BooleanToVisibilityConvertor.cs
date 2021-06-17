@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace GreyBase.ValueConvertors
+namespace GreyBase
 {
 	public class BooleanToVisibilityConvertor : BaseValueConvertor<BooleanToVisibilityConvertor>
 	{
