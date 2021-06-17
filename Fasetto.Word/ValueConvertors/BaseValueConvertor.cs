@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace GreyBase.ValueConvertors
+namespace GreyBase
 {
 	/// <summary>
 	/// Base value converter for direct XAML usage

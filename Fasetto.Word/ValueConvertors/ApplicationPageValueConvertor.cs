@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using GreyBase.DataModels;
 using GreyBase.Pages;
 
-namespace GreyBase.ValueConvertors
+namespace GreyBase
 {
 	/// <summary>
 	/// Converts the <see cref="ApplicationPage"/> to an actual view/page

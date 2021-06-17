@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:GreyBase"
-    xmlns:local1="clr-namespace:GreyBase.ValueConvertors"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="AppWindow"
     Title="GreyBase"
@@ -140,16 +139,18 @@
     <Border Background="{StaticResource BackgroundDarkBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1*" MaxWidth="200" />
+                <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
 
+            <!--  Side Menu  -->
+            <Grid />
 
-
+            <!--  Content Holder  -->
             <Frame
                 x:Name="MainFrame"
                 Grid.Column="1"
-                Content="{Binding CurrentPage, Converter={local1:ApplicationPageValueConvertor}}" />
+                Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConvertor}}" />
         </Grid>
     </Border>
 
