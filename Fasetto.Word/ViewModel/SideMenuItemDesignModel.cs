@@ -8,7 +8,6 @@ namespace GreyBase
 {
 	public class SideMenuItemDesignModel : SideMenuItemViewModel
 	{
-
 		public static SideMenuItemDesignModel Instance => new SideMenuItemDesignModel();
 
 		public SideMenuItemDesignModel()
