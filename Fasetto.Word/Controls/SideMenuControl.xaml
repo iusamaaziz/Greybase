@@ -11,47 +11,89 @@
     d:DesignWidth="250"
     mc:Ignorable="d">
 
-    <UserControl.Template>
-        <ControlTemplate TargetType="UserControl">
 
-            <Grid Background="{StaticResource BackgroundDarkBrush}" DataContext="{x:Static local:SideMenuItemDesignModel.Instance}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+    <UserControl.Resources>
+        <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
 
-                <!--  Side Bar  -->
-                <Border
-                    Grid.Column="0"
-                    Width="6"
-                    Background="{StaticResource LightBlueBorderLiningBrush}" />
+                        <Border x:Name="background" Background="{StaticResource BackgroundDarkBrush}">
+                            <Grid x:Name="container" Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="1" Padding="8">
-                    <Border
-                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
-                        Background="Transparent"
-                        CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
-                        <Image Source="{Binding IconPath}" />
-                    </Border>
-                </Border>
+                                <!--  Side Bar  -->
+                                <Border
+                                    Grid.Column="0"
+                                    Width="6"
+                                    Background="{StaticResource LightBlueBorderLiningBrush}" />
 
-                <TextBlock
-                    Grid.Column="3"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    FontSize="{StaticResource FontSizeSmall}"
-                    Foreground="{StaticResource ForegroundLightBrush}"
-                    Text="{Binding Name}" />
+                                <Border Grid.Column="1" Padding="8">
+                                    <Border
+                                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                                        MinWidth="20"
+                                        Background="Transparent"
+                                        CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                                        <Image Source="{Binding IconPath}" />
+                                    </Border>
+                                </Border>
 
-            </Grid>
+                                <TextBlock
+                                    Grid.Column="3"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="{StaticResource FontSizeSmall}"
+                                    Foreground="{StaticResource ForegroundLightBrush}"
+                                    Text="{Binding Name}" />
+
+                            </Grid>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter TargetName="background" Property="Background" Value="{StaticResource HoverLightBlueBrush}" />
+                            </DataTrigger>
+
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="container"
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="{StaticResource HoverLightBlue}"
+                                            Duration="0:0:0.3" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="container"
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="Transparent"
+                                            Duration="0:0:0.3" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="container" Property="Background" Value="{StaticResource ForegroundDarkBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <!--  Problem, adding DataContext="{x:Static local:SideMenuItemDesignModel.Instance}" displays incorrect  -->
+    <ContentControl Style="{StaticResource ContentStyle}" />
 
 
-            <!--  The User content  -->
-
-
-        </ControlTemplate>
-    </UserControl.Template>
-
-    <ContentPresenter />
 </UserControl>

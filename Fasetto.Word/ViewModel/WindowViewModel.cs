@@ -22,7 +22,7 @@ namespace GreyBase
 		/// <summary>
 		/// The margin around the window to allow for a drop shadow
 		/// </summary>
-		private int mOuterMarginSize = 4;
+		private int mOuterMarginSize = 1;
 
 		/// <summary>
 		/// The radius of the edges of the window

@@ -30,4 +30,33 @@
     <Color x:Key="LightBlueBorderLining">#2FC2F7</Color>
     <SolidColorBrush x:Key="LightBlueBorderLiningBrush" Color="{StaticResource LightBlueBorderLining}" />
 
+    <Color x:Key="ForegroundDark">#bdbdbd</Color>
+    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}" />
+
+    <Color x:Key="WordBlue">#3099c5</Color>
+    <SolidColorBrush x:Key="WordBlueBrush" Color="{StaticResource WordBlue}" />
+
+    <Color x:Key="WordLightBlue">#45b6e5</Color>
+    <SolidColorBrush x:Key="WordLightBlueBrush" Color="{StaticResource WordLightBlue}" />
+
+    <Color x:Key="WordVeryLightBlue">#ecf6fb</Color>
+    <SolidColorBrush x:Key="WordVeryLightBlueBrush" Color="{StaticResource WordVeryLightBlue}" />
+
+    <Color x:Key="WordDarkBlue">#0c6991</Color>
+    <SolidColorBrush x:Key="WordDarkBlueBrush" Color="{StaticResource WordDarkBlue}" />
+
+    <Color x:Key="WordOrange">#ffa800</Color>
+    <SolidColorBrush x:Key="WordOrangeBrush" Color="{StaticResource WordOrange}" />
+
+    <Color x:Key="WordRed">#ff4747</Color>
+    <SolidColorBrush x:Key="WordRedBrush" Color="{StaticResource WordRed}" />
+
+    <Color x:Key="WordGreen">#00c541</Color>
+    <SolidColorBrush x:Key="WordGreenBrush" Color="{StaticResource WordGreen}" />
+
+    <Color x:Key="HoverLightBlue">#53C4F6</Color>
+    <SolidColorBrush x:Key="HoverLightBlueBrush" Color="{StaticResource HoverLightBlue}" />
+
+    <Color x:Key="HoverVeryLightBlue">#84C4F6</Color>
+    <SolidColorBrush x:Key="HoverVeryLightBlueBrush" Color="{StaticResource HoverVeryLightBlue}" />
 </ResourceDictionary>
