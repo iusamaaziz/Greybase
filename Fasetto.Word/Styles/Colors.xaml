@@ -66,4 +66,5 @@
     <Color x:Key="HoverDark">#4D4D4D</Color>
     <SolidColorBrush x:Key="HoverDarkBrush" Color="{StaticResource HoverDark}" />
 
+
 </ResourceDictionary>
