@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:GreyBase"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="AppWindow"
     Title="GreyBase"
     Width="900"
@@ -145,7 +145,7 @@
             </Grid.ColumnDefinitions>
 
             <!--  Side Menu  -->
-            <local:SideMenuListControl VerticalAlignment="Top"/>
+            <local:SideMenuListControl VerticalAlignment="Top" />
 
             <!--  Content Holder  -->
             <Frame

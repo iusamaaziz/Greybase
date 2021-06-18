@@ -18,7 +18,10 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ContentControl}">
 
-                        <Border x:Name="background" Background="{StaticResource BackgroundDarkBrush}" Padding="0 0 8 0">
+                        <Border
+                            x:Name="background"
+                            Padding="0,0,8,0"
+                            Background="{StaticResource BackgroundDarkBrush}">
                             <Grid x:Name="container" Background="Transparent">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
