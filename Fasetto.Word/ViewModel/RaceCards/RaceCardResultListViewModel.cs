@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GreyBase
 {
-	public class GreyhoundRaceCardItemViewModel : BaseViewModel
+	public class RaceCardResultListViewModel : BaseViewModel
 	{
-		public GreyhoundProfileViewModel Greyhound { get; set; }
+		public List<RaceCardItemDesignModel> Items { get; set; }
 
 	}
 }

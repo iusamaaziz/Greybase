@@ -12,8 +12,8 @@
     mc:Ignorable="d">
 
     <Border Background="{StaticResource MaterialDesignDarkBackground}">
-        <Grid>
-            <!--<Grid.Background>
+        <!--<Grid>-->
+        <!--<Grid.Background>
                 <ImageBrush
                     ImageSource="/Images/Logo/GreyBaseFormBankLogo.png"
                     TileMode="Tile"
@@ -21,7 +21,7 @@
             </Grid.Background>-->
 
 
-            <!--<Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -35,13 +35,18 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>-->
 
-            <materialDesign:Card
-                Margin="50"
-                Background="{StaticResource BackgroundDarkBrush}"
-                UniformCornerRadius="3">
+        <materialDesign:Card
+            Margin="50"
+            VerticalAlignment="Top"
+            Background="{StaticResource BackgroundDarkBrush}"
+            UniformCornerRadius="3">
 
-                <local:GreyhoundRaceCardItemControl />
-            </materialDesign:Card>
-        </Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <DockPanel>
+                    <local:GreyhoundRaceCardItemControl DockPanel.Dock="Top"/>
+                </DockPanel>
+            </ScrollViewer>
+        </materialDesign:Card>
+        <!--</Grid>-->
     </Border>
 </Page>

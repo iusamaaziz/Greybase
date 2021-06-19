@@ -6,12 +6,15 @@
     xmlns:local="clr-namespace:GreyBase"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
+    MinWidth="800"
+    MinHeight="100"
+    d:DesignHeight="200"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <StackPanel Orientation="Vertical">
+
+    <DockPanel DataContext="{x:Static local:RaceCardItemDesignModel.Instance}">
         <!--  Profile Data  -->
-        <Grid>
+        <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
                 <!--  Trap Image  -->
                 <ColumnDefinition Width="Auto" />
@@ -49,7 +52,7 @@
                     VerticalAlignment="Top"
                     FontSize="{StaticResource FontSizeRegular}"
                     Foreground="{StaticResource ForegroundLightBrush}"
-                    Text="Grana Padano" />
+                    Text="{Binding Greyhound.Name}" />
             </Button>
 
             <!--  Play Video Icon  -->
@@ -64,6 +67,7 @@
                 UniformCornerRadius="5">
                 <Image Source="{StaticResource PlayIcon}" />
             </materialDesign:Card>
+
 
             <!--  Trainer  -->
             <StackPanel
@@ -83,49 +87,81 @@
                         Padding="5"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
-                        Text="Angela Harrison" />
+                        Text="{Binding Greyhound.Trainer.Name}" />
                 </Button>
 
             </StackPanel>
 
         </Grid>
 
-        <DataGrid Style="{StaticResource MaterialDesignDataGrid}">
 
 
+
+        <DataGrid
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            DockPanel.Dock="Bottom"
+            ItemsSource="{Binding Races}"
+            Style="{StaticResource MaterialDesignDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="30"
-                    Binding="{Binding UserID}"
-                    CellStyle="{StaticResource MaterialDesignDataGridCell}"
-                    Header="Date" />
+                    Width="Auto"
+                    Binding="{Binding Date}"
+                    Header="Date"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Distance}"
+                    Header="Distance"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Trap}"
+                    Header="Trap"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Split}"
+                    Header="Split"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Win2nd}"
+                    Header="Win/2nd"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Grade}"
+                    Header="Grade"
+                    IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding UserID}"
-                    Header="Distance" />
+                    Binding="{Binding Remarks}"
+                    Header="Remarks"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding SP}"
+                    Header="SP"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding BSP}"
+                    Header="BSP"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Racecode}"
+                    Header="Racecode"
+                    IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding UserID}"
-                    Header="Trap" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UserID}"
-                    Header="Track" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UserID}"
-                    Header="Grade" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UserID}"
-                    Header="Race Code" />
-                <DataGridTextColumn
-                    Width="2*"
-                    Binding="{Binding UserID}"
+                    Binding="{Binding Notes}"
                     Header="Notes" />
             </DataGrid.Columns>
         </DataGrid>
+    </DockPanel>
 
 
-    </StackPanel>
 </UserControl>
