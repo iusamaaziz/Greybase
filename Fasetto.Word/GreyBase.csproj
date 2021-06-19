@@ -79,6 +79,9 @@
     <Compile Include="Controls\GreyhoundRaceCardItemControl.xaml.cs">
       <DependentUpon>GreyhoundRaceCardItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GreyHoundRaceCardListControl.xaml.cs">
+      <DependentUpon>GreyHoundRaceCardListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
@@ -95,13 +98,20 @@
     <Compile Include="ValueConvertors\BooleanToVisibilityConvertor.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
+    <Compile Include="ViewModel\GreyhoundProfileViewModel.cs" />
+    <Compile Include="ViewModel\GreyhoundRaceCardItemViewModel.cs" />
     <Compile Include="ViewModel\SideMenuItemDesignModel.cs" />
     <Compile Include="ViewModel\SideMenuListDesignModel.cs" />
     <Compile Include="ViewModel\SideMenuListViewModel.cs" />
     <Compile Include="ViewModel\SideMenuItemViewModel.cs" />
+    <Compile Include="ViewModel\TrainerViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Page Include="Controls\GreyhoundRaceCardItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GreyHoundRaceCardListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

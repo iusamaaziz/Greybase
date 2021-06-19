@@ -9,54 +9,123 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
-        <Grid.ColumnDefinitions>
+    <StackPanel Orientation="Vertical">
+        <!--  Profile Data  -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--  Trap Image  -->
+                <ColumnDefinition Width="Auto" />
+                <!--  Greyhound Name  -->
+                <ColumnDefinition Width="Auto" />
+                <!--  Play Video Icon  -->
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <!--  Data Grid  -->
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
             <!--  Trap Image  -->
-            <ColumnDefinition Width="Auto" />
+            <materialDesign:Card
+                Grid.RowSpan="2"
+                MaxWidth="40"
+                Margin="8"
+                ToolTip="Trap"
+                UniformCornerRadius="5">
+                <Image Source="{StaticResource Trap1}" />
+            </materialDesign:Card>
+
             <!--  Greyhound Name  -->
-            <ColumnDefinition Width="Auto" />
+            <Button
+                Grid.Column="1"
+                Style="{StaticResource MaterialDesignToolForegroundButton}"
+                ToolTip="Greyhound Name">
+                <TextBlock
+                    Padding="5"
+                    VerticalAlignment="Top"
+                    FontSize="{StaticResource FontSizeRegular}"
+                    Foreground="{StaticResource ForegroundLightBrush}"
+                    Text="Grana Padano" />
+            </Button>
+
             <!--  Play Video Icon  -->
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+            <materialDesign:Card
+                Grid.Row="0"
+                Grid.Column="2"
+                MaxWidth="30"
+                Margin="10"
+                Background="Transparent"
+                Cursor="Hand"
+                ToolTip="Play Video"
+                UniformCornerRadius="5">
+                <Image Source="{StaticResource PlayIcon}" />
+            </materialDesign:Card>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+            <!--  Trainer  -->
+            <StackPanel
+                Grid.Column="3"
+                Margin="0,0,15,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="5,0"
+                    FontSize="{StaticResource FontSizeSmall}"
+                    Style="{StaticResource HeaderText}"
+                    Text="Trained By:" />
+                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" ToolTip="Trainer">
 
-        <!--  Trap Image  -->
-        <materialDesign:Card
-            Grid.RowSpan="2"
-            MaxWidth="70"
-            Margin="8"
-            UniformCornerRadius="5">
-            <Image Source="{StaticResource Trap1}" />
-        </materialDesign:Card>
+                    <TextBlock
+                        Padding="5"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="Angela Harrison" />
+                </Button>
 
-        <!--  Greyhound Name  -->
-        <TextBlock
-            Grid.Row="0"
-            Grid.Column="1"
-            Padding="5"
-            VerticalAlignment="Top"
-            FontSize="{StaticResource FontSizeLarge}"
-            Style="{StaticResource HeaderText}"
-            Text="Grana Padano" />
+            </StackPanel>
+
+        </Grid>
+
+        <DataGrid Style="{StaticResource MaterialDesignDataGrid}">
 
 
-        <!--  Play Video Icon  -->
-        <materialDesign:Card
-            Grid.Row="0"
-            Grid.Column="2"
-            MaxWidth="30"
-            Margin="10"
-            Background="Transparent"
-            UniformCornerRadius="5">
-            <Image Source="{StaticResource PlayIcon}" />
-        </materialDesign:Card>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="30"
+                    Binding="{Binding UserID}"
+                    CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                    Header="Date" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UserID}"
+                    Header="Distance" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UserID}"
+                    Header="Trap" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UserID}"
+                    Header="Track" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UserID}"
+                    Header="Grade" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UserID}"
+                    Header="Race Code" />
+                <DataGridTextColumn
+                    Width="2*"
+                    Binding="{Binding UserID}"
+                    Header="Notes" />
+            </DataGrid.Columns>
+        </DataGrid>
 
-    </Grid>
+
+    </StackPanel>
 </UserControl>

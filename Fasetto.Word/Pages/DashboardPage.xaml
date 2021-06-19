@@ -1,9 +1,9 @@
 ﻿<Page
-    x:Class="GreyBase.Pages.DashboardPage"
+    x:Class="GreyBase.DashboardPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:GreyBase.Pages"
+    xmlns:local="clr-namespace:GreyBase"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Dashboard"
@@ -37,11 +37,11 @@
 
             <materialDesign:Card
                 Margin="50"
-                Background="{StaticResource MaterialDesignBackground}"
+                Background="{StaticResource BackgroundDarkBrush}"
                 UniformCornerRadius="3">
-                <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Content="Hello world"/>
-            </materialDesign:Card>
 
+                <local:GreyhoundRaceCardItemControl />
+            </materialDesign:Card>
         </Grid>
     </Border>
 </Page>
