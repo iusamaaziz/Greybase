@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace GreyBase
 {
+
 	public class RaceCardItemDesignModel : RaceCardItemViewModel
 	{
 		public static RaceCardItemDesignModel Instance => new RaceCardItemDesignModel();
@@ -15,7 +16,7 @@ namespace GreyBase
 		{
 			Greyhound = new GreyhoundProfileViewModel() { Name = "Severiano", Trainer = new TrainerViewModel() { Name = "Angela Harrison" } };
 
-			Races = new ObservableCollection<RaceCardResultRowViewModel>
+			Races = new List<RaceCardResultRowViewModel>
 			{
 				new RaceCardResultRowViewModel
 				{

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GreyBase.Controls
+namespace GreyBase
 {
 	/// <summary>
-	/// Interaction logic for GreyHoundRaceCardListControl.xaml
+	/// Interaction logic for RaceCardListControl.xaml
 	/// </summary>
-	public partial class GreyHoundRaceCardListControl : UserControl
+	public partial class RaceCardListControl : UserControl
 	{
-		public GreyHoundRaceCardListControl()
+		public RaceCardListControl()
 		{
 			InitializeComponent();
 		}

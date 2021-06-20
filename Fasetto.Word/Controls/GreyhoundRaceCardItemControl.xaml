@@ -12,7 +12,7 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <DockPanel DataContext="{x:Static local:RaceCardItemDesignModel.Instance}">
+    <DockPanel>
         <!--  Profile Data  -->
         <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
@@ -35,22 +35,22 @@
             <!--  Trap Image  -->
             <materialDesign:Card
                 Grid.RowSpan="2"
-                MaxWidth="40"
+                MaxWidth="30"
                 Margin="8"
                 ToolTip="Trap"
                 UniformCornerRadius="5">
-                <Image Source="{StaticResource Trap1}" />
+                <Image Source="{Binding Trap, Converter={local:TrapToImageSourceConvertor}}" />
             </materialDesign:Card>
 
             <!--  Greyhound Name  -->
             <Button
                 Grid.Column="1"
                 Style="{StaticResource MaterialDesignToolForegroundButton}"
-                ToolTip="Greyhound Name">
+                ToolTip="Greyhound">
                 <TextBlock
                     Padding="5"
                     VerticalAlignment="Top"
-                    FontSize="{StaticResource FontSizeRegular}"
+                    FontSize="{StaticResource FontSizeSmall}"
                     Foreground="{StaticResource ForegroundLightBrush}"
                     Text="{Binding Greyhound.Name}" />
             </Button>
@@ -59,7 +59,7 @@
             <materialDesign:Card
                 Grid.Row="0"
                 Grid.Column="2"
-                MaxWidth="30"
+                MaxWidth="20"
                 Margin="10"
                 Background="Transparent"
                 Cursor="Hand"
@@ -93,9 +93,6 @@
             </StackPanel>
 
         </Grid>
-
-
-
 
         <DataGrid
             AutoGenerateColumns="False"
@@ -158,6 +155,7 @@
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding Notes}"
+                    EditingElementStyle="{StaticResource MaterialDesignTextBox}"
                     Header="Notes" />
             </DataGrid.Columns>
         </DataGrid>

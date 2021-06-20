@@ -35,13 +35,13 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>-->
 
+
             <materialDesign:Card
                 Margin="50"
-                Background="{StaticResource BackgroundDarkBrush}"
-                UniformCornerRadius="3"
                 VerticalAlignment="Top"
-                >
-                <local:GreyhoundRaceCardItemControl />
+                Background="{StaticResource BackgroundDarkBrush}"
+                UniformCornerRadius="3">
+                <local:RaceCardListControl />
             </materialDesign:Card>
         </Grid>
     </Border>

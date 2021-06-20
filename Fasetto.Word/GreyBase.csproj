@@ -79,8 +79,8 @@
     <Compile Include="Controls\GreyhoundRaceCardItemControl.xaml.cs">
       <DependentUpon>GreyhoundRaceCardItemControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GreyHoundRaceCardListControl.xaml.cs">
-      <DependentUpon>GreyHoundRaceCardListControl.xaml</DependentUpon>
+    <Compile Include="Controls\RaceCardListControl.xaml.cs">
+      <DependentUpon>RaceCardListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="ValueConvertors\ApplicationPageValueConvertor.cs" />
     <Compile Include="ValueConvertors\BaseValueConvertor.cs" />
+    <Compile Include="ValueConvertors\TrapToImageSourceConvertor.cs" />
     <Compile Include="ValueConvertors\StringRGBToBrushConvertor.cs" />
     <Compile Include="ValueConvertors\BooleanToVisibilityConvertor.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
@@ -101,10 +102,9 @@
     <Compile Include="ViewModel\GreyhoundProfileViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemViewModel.cs" />
-    <Compile Include="ViewModel\RaceCards\RaceCardResultDesignModel.cs" />
-    <Compile Include="ViewModel\RaceCards\RaceCardResultListDesignModel.cs" />
+    <Compile Include="ViewModel\RaceCards\RaceCardListDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardResultRowViewModel.cs" />
-    <Compile Include="ViewModel\RaceCards\RaceCardResultListViewModel.cs" />
+    <Compile Include="ViewModel\RaceCards\RaceCardListViewModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuItemDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListViewModel.cs" />
@@ -116,7 +116,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\GreyHoundRaceCardListControl.xaml">
+    <Page Include="Controls\RaceCardListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

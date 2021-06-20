@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GreyBase
 {
+	/// <summary>
+	/// Contains datagrid values for each RaceCard Item
+	/// </summary>
 	public class RaceCardResultRowViewModel : BaseViewModel
 	{
 		public DateTime Date { get; set; }
