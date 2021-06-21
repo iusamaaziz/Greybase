@@ -13,20 +13,17 @@
 
     <Border Background="{StaticResource MaterialDesignDarkBackground}">
         <Grid>
-            <!--<Grid.Background>
-                <ImageBrush
-                    ImageSource="/Images/Logo/GreyBaseFormBankLogo.png"
-                    TileMode="Tile"
-                    ViewportUnits="RelativeToBoundingBox" />
-            </Grid.Background>-->
+
+            <!--  Race Result List  -->
 
             <materialDesign:Card
                 Margin="50"
                 VerticalAlignment="Top"
                 Background="{StaticResource BackgroundDarkBrush}"
                 UniformCornerRadius="3">
-                <local:RaceResultListControl Margin="0,3" />
+                <local:RaceCardListControl Margin="0,3" />
             </materialDesign:Card>
+
         </Grid>
     </Border>
 </Page>

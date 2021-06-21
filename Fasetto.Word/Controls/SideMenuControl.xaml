@@ -22,6 +22,12 @@
                             x:Name="background"
                             Padding="0,0,8,0"
                             Background="{StaticResource BackgroundDarkBrush}">
+
+                            <!--  Click to open message  -->
+                            <Border.InputBindings>
+                                <MouseBinding Command="{Binding OpenMessageCommand}" MouseAction="LeftClick" />
+                            </Border.InputBindings>
+
                             <Grid x:Name="container" Background="Transparent">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />

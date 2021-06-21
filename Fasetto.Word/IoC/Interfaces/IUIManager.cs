@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using GreyBase.ViewModel.Dialogs;
 
-namespace GreyBase.IoC.Interfaces
+namespace GreyBase
 {
 	/// <summary>
 	/// The UI manager that handles any UI interaction in the application

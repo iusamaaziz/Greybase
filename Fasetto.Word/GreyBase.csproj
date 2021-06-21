@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animation\AnimationSlideInDirection.cs" />
     <Compile Include="Animation\FrameworkElementAnimations.cs" />
     <Compile Include="Animation\PageAnimation.cs" />
     <Compile Include="Animation\PageAnimations.cs" />
@@ -90,6 +91,9 @@
     </Compile>
     <Compile Include="Controls\Greyhounds\GreyhoundProfileControl.xaml.cs">
       <DependentUpon>GreyhoundProfileControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHost.xaml.cs">
+      <DependentUpon>PageHost.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\RaceCardListControl.xaml.cs">
       <DependentUpon>RaceCardListControl.xaml</DependentUpon>
@@ -109,9 +113,10 @@
     <Compile Include="DataModels\ApplicationPage.cs" />
     <Compile Include="DataModels\ElementHorizontalAlignment.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
-    <Compile Include="IoC\Base\IoC.cs" />
-    <Compile Include="IoC\Interfaces\IUIManager.cs" />
-    <Compile Include="IoC\UIManager.cs" />
+    <Compile Include="IOC\Base\IoC.cs" />
+    <Compile Include="IOC\Interfaces\IUIManager.cs" />
+    <Compile Include="IOC\UIManager.cs" />
+    <Compile Include="Models\GreyhoundTrapModel.cs" />
     <Compile Include="Models\RaceDetailsModel.cs" />
     <Compile Include="Models\RaceResultDataModel.cs" />
     <Compile Include="Models\RaceResultModel.cs" />
@@ -119,6 +124,7 @@
     <Compile Include="Pages\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConvertors\ApplicationPageHelpers.cs" />
     <Compile Include="ValueConvertors\ApplicationPageValueConvertor.cs" />
     <Compile Include="ValueConvertors\BaseValueConvertor.cs" />
     <Compile Include="ValueConvertors\HorizontalAlignmentConverter.cs" />
@@ -142,8 +148,11 @@
     <Compile Include="ViewModel\RaceCards\RaceCardListDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardResultRowViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardListViewModel.cs" />
+    <Compile Include="ViewModel\RaceResults\MeetingRaceModel.cs" />
     <Compile Include="ViewModel\RaceResults\RaceResultListDesignModel.cs" />
     <Compile Include="ViewModel\RaceResults\RaceResultListViewModel.cs" />
+    <Compile Include="ViewModel\RaceResults\TrackMeetingRacesDesignModel.cs" />
+    <Compile Include="ViewModel\RaceResults\TrackMeetingRacesViewModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuItemDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListViewModel.cs" />
@@ -156,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Greyhounds\GreyhoundProfileControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PageHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

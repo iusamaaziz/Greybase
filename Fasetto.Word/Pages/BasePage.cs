@@ -1,17 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Windows.Controls;
+using System.Windows;
 using System.Threading.Tasks;
-using System.Windows.Controls;
+using System.Windows.Media.Animation;
+using System;
+using System.ComponentModel;
+using GreyBase;
 
 namespace GreyBase
 {
 	/// <summary>
-	/// A base page for all pages to gain base functionality
+	/// The base page for all pages to gain base functionality
 	/// </summary>
-	public class BasePage : Page
+	public class BasePage : UserControl
 	{
+		#region Private Member
+
+		/// <summary>
+		/// The View Model associated with this page
+		/// </summary>
+		private object mViewModel;
+
+		#endregion
+
 		#region Public Properties
 
 		/// <summary>
@@ -27,7 +37,33 @@ namespace GreyBase
 		/// <summary>
 		/// The time any slide animation takes to complete
 		/// </summary>
-		public float SlideSeconds { get; set; } = 0.8f;
+		public float SlideSeconds { get; set; } = 0.4f;
+
+		/// <summary>
+		/// A flag to indicate if this page should animate out on load.
+		/// Useful for when we are moving the page to another frame
+		/// </summary>
+		public bool ShouldAnimateOut { get; set; }
+
+		/// <summary>
+		/// The View Model associated with this page
+		/// </summary>
+		public object ViewModelObject
+		{
+			get => mViewModel;
+			set
+			{
+				// If nothing has changed, return
+				if (mViewModel == value)
+					return;
+
+				// Update the value
+				mViewModel = value;
+
+				// Set the data context for this page
+				DataContext = mViewModel;
+			}
+		}
 
 		#endregion
 
@@ -38,12 +74,16 @@ namespace GreyBase
 		/// </summary>
 		public BasePage()
 		{
+			// Don't bother animating in design time
+			if (DesignerProperties.GetIsInDesignMode(this))
+				return;
+
 			// If we are animating in, hide to begin with
-			if (this.PageLoadAnimation != PageAnimation.None)
-				this.Visibility = System.Windows.Visibility.Collapsed;
+			if (PageLoadAnimation != PageAnimation.None)
+				Visibility = Visibility.Collapsed;
 
 			// Listen out for the page loading
-			this.Loaded += BasePage_Loaded;
+			Loaded += BasePage_LoadedAsync;
 		}
 
 		#endregion
@@ -55,28 +95,34 @@ namespace GreyBase
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+		private async void BasePage_LoadedAsync(object sender, System.Windows.RoutedEventArgs e)
 		{
-			// Animate the page in
-			await AnimateIn();
+			// If we are setup to animate out on load
+			if (ShouldAnimateOut)
+				// Animate out the page
+				await AnimateOutAsync();
+			// Otherwise...
+			else
+				// Animate the page in
+				await AnimateInAsync();
 		}
 
 		/// <summary>
 		/// Animates the page in
 		/// </summary>
 		/// <returns></returns>
-		public async Task AnimateIn()
+		public async Task AnimateInAsync()
 		{
 			// Make sure we have something to do
-			if (this.PageLoadAnimation == PageAnimation.None)
+			if (PageLoadAnimation == PageAnimation.None)
 				return;
 
-			switch (this.PageLoadAnimation)
+			switch (PageLoadAnimation)
 			{
 				case PageAnimation.SlideAndFadeInFromRight:
 
 					// Start the animation
-					await this.SlideAndFadeInFromRight(this.SlideSeconds);
+					await this.SlideAndFadeInAsync(AnimationSlideInDirection.Right, false, SlideSeconds, size: (int)Application.Current.MainWindow.Width);
 
 					break;
 			}
@@ -86,21 +132,68 @@ namespace GreyBase
 		/// Animates the page out
 		/// </summary>
 		/// <returns></returns>
-		public async Task AnimateOut()
+		public async Task AnimateOutAsync()
 		{
 			// Make sure we have something to do
-			if (this.PageUnloadAnimation == PageAnimation.None)
+			if (PageUnloadAnimation == PageAnimation.None)
 				return;
 
-			switch (this.PageUnloadAnimation)
+			switch (PageUnloadAnimation)
 			{
 				case PageAnimation.SlideAndFadeOutToLeft:
 
 					// Start the animation
-					await this.SlideAndFadeOutToLeft(this.SlideSeconds);
+					await this.SlideAndFadeOutAsync(AnimationSlideInDirection.Left, SlideSeconds);
 
 					break;
 			}
+		}
+
+		#endregion
+	}
+
+	/// <summary>
+	/// A base page with added ViewModel support
+	/// </summary>
+	public class BasePage<VM> : BasePage
+		where VM : BaseViewModel, new()
+	{
+		#region Public Properties
+
+		/// <summary>
+		/// The view model associated with this page
+		/// </summary>
+		public VM ViewModel
+		{
+			get => (VM)ViewModelObject;
+			set => ViewModelObject = value;
+		}
+
+		#endregion
+
+		#region Constructor
+
+		/// <summary>
+		/// Default constructor
+		/// </summary>
+		public BasePage() : base()
+		{
+			// Create a default view model
+			ViewModel = IoC.Get<VM>();
+		}
+
+		/// <summary>
+		/// Constructor with specific view model
+		/// </summary>
+		/// <param name="specificViewModel">The specific view model to use, if any</param>
+		public BasePage(VM specificViewModel = null) : base()
+		{
+			// Set specific view model
+			if (specificViewModel != null)
+				ViewModel = specificViewModel;
+			else
+				// Create a default view model
+				ViewModel = IoC.Get<VM>();
 		}
 
 		#endregion

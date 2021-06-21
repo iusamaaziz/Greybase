@@ -1,12 +1,268 @@
-﻿<UserControl x:Class="GreyBase.RaceResultListHorizontalControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:GreyBase"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+﻿<UserControl
+    x:Class="GreyBase.RaceResultListHorizontalControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:GreyBase"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Border
+        BorderThickness="1"
+        CornerRadius="5"
+        DataContext="{x:Static local:TrackMeetingRacesDesignModel.Instance}">
 
-    </Grid>
+
+        <Border.Resources>
+            <DataTemplate x:Key="FirstPosition">
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding First.Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
+
+                    <!--  Greyhound Name  -->
+                    <TextBlock
+                        Padding="3"
+                        VerticalAlignment="Top"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="{Binding First.Greyhound.Name}"
+                        ToolTip="Greyhound" />
+
+                </StackPanel>
+
+            </DataTemplate>
+            <DataTemplate x:Key="SecondPosition">
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding Second.Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
+
+                    <!--  Greyhound Name  -->
+                    <TextBlock
+                        Padding="3"
+                        VerticalAlignment="Top"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="{Binding Second.Greyhound.Name}"
+                        ToolTip="Greyhound" />
+
+                </StackPanel>
+
+            </DataTemplate>
+            <DataTemplate x:Key="ThirdPosition">
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding Third.Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
+
+                    <!--  Greyhound Name  -->
+                    <TextBlock
+                        Padding="3"
+                        VerticalAlignment="Top"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="{Binding Third.Greyhound.Name}"
+                        ToolTip="Greyhound" />
+
+                </StackPanel>
+
+            </DataTemplate>
+            <DataTemplate x:Key="ForthPosition">
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding Forth.Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
+
+                    <!--  Greyhound Name  -->
+                    <TextBlock
+                        Padding="3"
+                        VerticalAlignment="Top"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="{Binding Forth.Greyhound.Name}"
+                        ToolTip="Greyhound" />
+
+                </StackPanel>
+
+            </DataTemplate>
+            <DataTemplate x:Key="FifthPosition">
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding Fifth.Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
+
+                    <!--  Greyhound Name  -->
+                    <TextBlock
+                        Padding="3"
+                        VerticalAlignment="Top"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="{Binding Fifth.Greyhound.Name}"
+                        ToolTip="Greyhound" />
+
+                </StackPanel>
+
+            </DataTemplate>
+            <DataTemplate x:Key="SixthPosition">
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding Sixth.Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
+
+                    <!--  Greyhound Name  -->
+                    <TextBlock
+                        Padding="3"
+                        VerticalAlignment="Top"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Text="{Binding Sixth.Greyhound.Name}"
+                        ToolTip="Greyhound" />
+
+                </StackPanel>
+
+            </DataTemplate>
+        </Border.Resources>
+
+        <DockPanel>
+
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+
+                <!--  Race Track  -->
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="15,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Foreground="{StaticResource HeaderMainBrush}"
+                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                    Text="{Binding Track}" />
+
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="15,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Foreground="{StaticResource HeaderMainBrush}"
+                    Style="{StaticResource HeaderText}"
+                    Text="{Binding Date, StringFormat='dd/MM/yyyy'}" />
+
+            </StackPanel>
+
+            <DataGrid
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                DockPanel.Dock="Top"
+                ItemsSource="{Binding Races}"
+                Style="{StaticResource MaterialDesignDataGrid}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Width="Auto"
+                        Binding="{Binding Time, StringFormat='hh:mm'}"
+                        Header="Time"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Width="Auto"
+                        Binding="{Binding Distance}"
+                        Header="Dist"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Width="Auto"
+                        Binding="{Binding Gd}"
+                        Header="Gd"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Width="Auto"
+                        Binding="{Binding Gg}"
+                        Header="Gg"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CellTemplate="{StaticResource FirstPosition}"
+                        Header="1st"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CellTemplate="{StaticResource SecondPosition}"
+                        Header="2nd"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CellTemplate="{StaticResource ThirdPosition}"
+                        Header="3rd"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CellTemplate="{StaticResource ForthPosition}"
+                        Header="4th"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CellTemplate="{StaticResource FifthPosition}"
+                        Header="5th"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CellTemplate="{StaticResource SixthPosition}"
+                        Header="6th"
+                        IsReadOnly="True" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </DockPanel>
+
+    </Border>
 </UserControl>

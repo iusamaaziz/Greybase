@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using GreyBase.IoC.Interfaces;
 using GreyBase.ViewModel;
 
 using Ninject;
 
-namespace GreyBase.IoC.Base
+namespace GreyBase
 {
+	/// <summary>
+	/// The IoC container for our application
+	/// </summary>
 	public static class IoC
 	{
 		#region Public Properties
@@ -24,6 +26,16 @@ namespace GreyBase.IoC.Base
 		/// A shortcut to access the <see cref="IUIManager"/>
 		/// </summary>
 		public static IUIManager UI => IoC.Get<IUIManager>();
+
+		/// <summary>
+		/// A shortcut to access the <see cref="ApplicationViewModel"/>
+		/// </summary>
+		public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
+
+		/// <summary>
+		/// A shortcut to access the <see cref="SettingsViewModel"/>
+		/// </summary>
+		//public static SettingsViewModel Settings => IoC.Get<SettingsViewModel>();
 
 		#endregion
 
@@ -47,6 +59,9 @@ namespace GreyBase.IoC.Base
 		{
 			// Bind to a single instance of Application view model
 			Kernel.Bind<ApplicationViewModel>().ToConstant(new ApplicationViewModel());
+
+			// Bind to a single instance of Settings view model
+			//Kernel.Bind<SettingsViewModel>().ToConstant(new SettingsViewModel());
 		}
 
 		#endregion

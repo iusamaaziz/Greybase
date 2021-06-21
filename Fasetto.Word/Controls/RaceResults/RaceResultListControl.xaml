@@ -12,7 +12,7 @@
     <Border
         BorderThickness="1"
         CornerRadius="5"
-        DataContext="{x:Static local:RaceResultListDesignModel.Instance}">
+        DataContext="{x:Static local:RaceResultListDesignModel.Instance}" Height="450" VerticalAlignment="Bottom">
         <Border.Resources>
             <DataTemplate x:Key="DogColumn">
                 <StackPanel Margin="2,0" Orientation="Horizontal">

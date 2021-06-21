@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using GreyBase.IoC.Interfaces;
 using GreyBase.ViewModel.Dialogs;
 
-namespace GreyBase.IoC
+namespace GreyBase
 {
 	public class UIManager : IUIManager
 	{
