@@ -15,41 +15,39 @@
         DataContext="{x:Static local:RaceResultListDesignModel.Instance}">
         <Border.Resources>
             <DataTemplate x:Key="DogColumn">
-                <StackPanel Grid.Column="1" Orientation="Vertical">
-                    <StackPanel Margin="5,0" Orientation="Horizontal">
-                        <!--  Trap Image  -->
-                        <materialDesign:Card
-                            Grid.Row="0"
-                            Grid.RowSpan="2"
-                            Grid.Column="1"
-                            MaxWidth="30"
-                            Margin="3"
-                            ToolTip="Trap"
-                            UniformCornerRadius="5">
-                            <Image Source="{Binding Trap, Converter={local:TrapToImageSourceConvertor}}" />
-                        </materialDesign:Card>
+                <StackPanel Margin="2,0" Orientation="Horizontal">
+                    <!--  Trap Image  -->
+                    <materialDesign:Card
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        MaxWidth="23"
+                        Margin="1"
+                        ToolTip="Trap"
+                        UniformCornerRadius="5">
+                        <Image Source="{Binding Trap, Converter={local:TrapToImageSourceConvertor}}" />
+                    </materialDesign:Card>
 
-                        <!--  Greyhound Name  -->
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Greyhound">
-                            <TextBlock
-                                Padding="5"
-                                VerticalAlignment="Top"
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Foreground="{StaticResource ForegroundLightBrush}"
-                                Text="{Binding Dog}"
-                                ToolTip="Greyhound" />
-                        </Button>
-
-                    </StackPanel>
-
-                    <!--  Greyhound profiel description  -->
-                    <TextBlock
-                        Foreground="{StaticResource ForegroundMainBrush}"
-                        Style="{StaticResource MaterialDesignBody1TextBlock}"
-                        Text="{Binding DogDetail}"
-                        TextTrimming="CharacterEllipsis" />
+                    <!--  Greyhound Name  -->
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Greyhound">
+                        <TextBlock
+                            Padding="3"
+                            VerticalAlignment="Top"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource ForegroundLightBrush}"
+                            Text="{Binding Dog.Name}"
+                            ToolTip="Greyhound" />
+                    </Button>
 
                 </StackPanel>
+
+                <!--  Greyhound profiel description  -->
+                <!--<TextBlock
+                        Foreground="{StaticResource ForegroundMainBrush}"
+                        Style="{StaticResource MaterialDesignBody1TextBlock}"
+                        Text="{Binding Dog.}"
+                        TextTrimming="CharacterEllipsis" />-->
+
             </DataTemplate>
         </Border.Resources>
         <DockPanel>
@@ -155,7 +153,7 @@
                         Header="POS"
                         IsReadOnly="True" />
                     <DataGridTemplateColumn
-                        Width="*"
+                        Width="Auto"
                         CellTemplate="{StaticResource DogColumn}"
                         Header="Dog"
                         IsReadOnly="True" />
@@ -186,7 +184,7 @@
                         IsReadOnly="True" />
                     <DataGridTextColumn
                         Width="Auto"
-                        Binding="{Binding Trainer}"
+                        Binding="{Binding Dog.Trainer.Name}"
                         Header="TRAINER"
                         IsReadOnly="True" />
                 </DataGrid.Columns>

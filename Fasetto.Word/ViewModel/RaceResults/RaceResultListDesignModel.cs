@@ -20,77 +20,173 @@ namespace GreyBase
 					new Models.RaceResultDataModel
 					{
 						Position = "1st",
-						Dog = "Brosna Sally",
+						Dog = new GreyhoundProfileModel
+						{
+							Name = "Brosna Sally",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
+
+							Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
+						},
 						Trap = "Trap1",
-						DogDetail = "Les vu d'azur la ces les",
 						SP = "3/5",
 						Sec = "3.65",
 						Time = "23.54",
 						Distance = "2",
-						Bend = "2111",
-						Trainer = "Marcus K. Smith"
+						Bend = "2111"
 					},
 					new Models.RaceResultDataModel
 					{
 						Position = "2nd",
-						Dog = "Mein und",
+						Dog = new GreyhoundProfileModel
+						{
+							Name = "Brosna Sally",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
+
+							Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
+						},
 						Trap = "Trap3",
-						DogDetail = "Flash mirth the gild of he feud fellow by harold",
 						SP = "3/5",
 						Sec = "3.65",
 						Time = "23.54",
 						Distance = "1 2/4",
-						Bend = "2111",
-						Trainer = "Marcus K. Smith"
+						Bend = "2111"
 					},
 					new Models.RaceResultDataModel
 					{
 						Position = "3rd",
-						Dog = "Tales of",
+						Dog = new GreyhoundProfileModel
+						{
+							Name = "Brosna Sally",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
+
+							Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
+						},
 						Trap = "Trap6",
-						DogDetail = "Les vu d'azur la ces les Esperienza trapassare degli di che",
 						SP = "3/5",
 						Sec = "3.65",
 						Time = "23.54",
 						Distance = "1 1/2",
-						Bend = "2111",
-						Trainer = "Marcus K. Smith"
+						Bend = "2111"
 					},
 					new Models.RaceResultDataModel
 					{
 						Position = "4th",
-						Dog = "Brosna Sally",
+						Dog = new GreyhoundProfileModel
+						{
+							Name = "Brosna Sally",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
+
+							Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
+						},
 						Trap = "Trap2",
-						DogDetail = "Les vu d'azur la ces les De anglais pour vacheries les",
 						SP = "3/5",
 						Sec = "3.65",
 						Time = "23.54",
-						Bend = "2111",
-						Trainer = "Marcus K. Smith"
+						Bend = "2111"
 					},
 					new Models.RaceResultDataModel
 					{
 						Position = "5th",
-						Dog = "Brosna Sally",
+						Dog = new GreyhoundProfileModel
+						{
+							Name = "Brosna Sally",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
+
+							Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
+						},
 						Trap = "Trap5",
-						DogDetail = "Les vu d'azur la ces les Dolore est sea dolor",
 						SP = "3/5",
 						Sec = "3.65",
 						Time = "23.54",
-						Bend = "2111",
-						Trainer = "Marcus K. Smith"
+						Bend = "2111"
 					},
 					new Models.RaceResultDataModel
 					{
 						Position = "6th",
-						Dog = "Brosna Sally",
+						Dog = new GreyhoundProfileModel
+						{
+							Name = "Brosna Sally",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
+
+							Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
+						},
 						Trap = "Trap4",
-						DogDetail = "Les vu d'azur la ces les",
 						SP = "3/5",
 						Sec = "3.65",
 						Time = "23.54",
-						Bend = "2111",
-						Trainer = "Marcus K. Smith"
+						Bend = "2111"
 					}
 				}
 			};

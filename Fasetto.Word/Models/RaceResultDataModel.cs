@@ -10,11 +10,9 @@ namespace GreyBase.Models
 	{
 		public string Position { get; set; }
 
-		public string Dog { get; set; }
+		public GreyhoundProfileModel Dog { get; set; }
 
 		public string Trap { get; set; }
-
-		public string DogDetail { get; set; }
 
 		public string SP { get; set; }
 
@@ -24,10 +22,7 @@ namespace GreyBase.Models
 
 		public string Distance { get; set; }
 
-
 		public string Bend { get; set; }
-
-		public string Trainer { get; set; }
 
 	}
 }

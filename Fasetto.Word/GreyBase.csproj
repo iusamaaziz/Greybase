@@ -97,6 +97,9 @@
     <Compile Include="Controls\RaceResults\RaceResultListControl.xaml.cs">
       <DependentUpon>RaceResultListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RaceResults\RaceResultListHorizontalControl.xaml.cs">
+      <DependentUpon>RaceResultListHorizontalControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,7 @@
     </Compile>
     <Compile Include="DataModels\ApplicationPage.cs" />
     <Compile Include="DataModels\ElementHorizontalAlignment.cs" />
+    <Compile Include="Expressions\ExpressionHelpers.cs" />
     <Compile Include="IoC\Base\IoC.cs" />
     <Compile Include="IoC\Interfaces\IUIManager.cs" />
     <Compile Include="IoC\UIManager.cs" />
@@ -160,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\RaceResults\RaceResultListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RaceResults\RaceResultListHorizontalControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

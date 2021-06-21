@@ -12,6 +12,8 @@ namespace GreyBase.DataModels
 	public enum ApplicationPage
 	{
 		Login,
-		Dashboard
+		Dashboard,
+		RaceCard,
+		RaceResult
 	}
 }

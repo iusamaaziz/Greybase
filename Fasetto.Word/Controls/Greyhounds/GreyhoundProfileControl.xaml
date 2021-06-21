@@ -120,7 +120,7 @@
                             FontWeight="Bold"
                             Style="{StaticResource HeaderText}"
                             Text="Trained By:" />
-                        <TextBlock
+                        <TextBox
                             Padding="5"
                             VerticalAlignment="Center"
                             FontSize="{StaticResource FontSizeSmall}"
