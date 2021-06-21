@@ -11,7 +11,7 @@ namespace GreyBase
 	{
 		public string Trap { get; set; }
 
-		public GreyhoundProfileViewModel Greyhound { get; set; }
+		public GreyhoundProfileModel Greyhound { get; set; }
 
 		public List<RaceCardResultRowViewModel> Races { get; set; }
 

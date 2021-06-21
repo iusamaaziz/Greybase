@@ -76,11 +76,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animation\PageAnimation.cs" />
+    <Compile Include="Animation\PageAnimations.cs" />
+    <Compile Include="Animation\StoryboardHelpers.cs" />
     <Compile Include="Controls\GreyhoundRaceCardItemControl.xaml.cs">
       <DependentUpon>GreyhoundRaceCardItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Greyhounds\GreyhoundProfileControl.xaml.cs">
+      <DependentUpon>GreyhoundProfileControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RaceCardListControl.xaml.cs">
       <DependentUpon>RaceCardListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RaceResults\RaceResultListControl.xaml.cs">
+      <DependentUpon>RaceResultListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
@@ -89,6 +98,10 @@
       <DependentUpon>SideMenuListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModels\ApplicationPage.cs" />
+    <Compile Include="Models\RaceDetailsModel.cs" />
+    <Compile Include="Models\RaceResultDataModel.cs" />
+    <Compile Include="Models\RaceResultModel.cs" />
+    <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
@@ -99,24 +112,36 @@
     <Compile Include="ValueConvertors\BooleanToVisibilityConvertor.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
-    <Compile Include="ViewModel\GreyhoundProfileViewModel.cs" />
+    <Compile Include="Models\GreyhoundProfileModel.cs" />
+    <Compile Include="ViewModel\Greyhounds\GreyhoundProfileDesignModel.cs" />
+    <Compile Include="ViewModel\Greyhounds\GreyhoundProfileViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardListDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardResultRowViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardListViewModel.cs" />
+    <Compile Include="ViewModel\RaceResults\RaceResultListDesignModel.cs" />
+    <Compile Include="ViewModel\RaceResults\RaceResultListViewModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuItemDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListViewModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuItemViewModel.cs" />
-    <Compile Include="ViewModel\TrainerViewModel.cs" />
+    <Compile Include="Models\TrainerModel.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Page Include="Controls\GreyhoundRaceCardItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Greyhounds\GreyhoundProfileControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\RaceCardListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RaceResults\RaceResultListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

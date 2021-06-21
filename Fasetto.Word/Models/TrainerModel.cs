@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GreyBase
 {
-	public class TrainerViewModel : BaseViewModel
+	public class TrainerModel
 	{
 		public string Name { get; set; }
 
-		public List<GreyhoundProfileViewModel> Greyhounds { get; set; }
+		public List<GreyhoundProfileModel> Greyhounds { get; set; }
 
 	}
 }

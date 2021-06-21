@@ -19,7 +19,13 @@ namespace GreyBase
 
 		public string Split { get; set; }
 
-		public string Win2nd { get; set; }
+		public string Bends { get; set; }
+
+		public string Pos { get; set; }
+
+		public string DistanceBeaten { get; set; }
+
+		public string Beat { get; set; }
 
 		public string Remarks { get; set; }
 

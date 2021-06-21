@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace GreyBase
 {
-	public class GreyhoundProfileViewModel : BaseViewModel
+	public class GreyhoundProfileModel
 	{
 		public string RPID { get; set; }
 
 		public string Name { get; set; }
+
+		public DateTime Dob { get; set; }
 
 		public string Sire { get; set; }
 
@@ -20,7 +22,7 @@ namespace GreyBase
 
 		public string Sex { get; set; }
 
-		public TrainerViewModel Trainer { get; set; }
+		public TrainerModel Trainer { get; set; }
 
 		public decimal IdealTrap { get; set; }
 
@@ -30,7 +32,7 @@ namespace GreyBase
 
 		public string RealGrade { get; set; }
 
-		public string Kick { get; set; }
+		public decimal Kick { get; set; }
 
 		public string Rating { get; set; }
 

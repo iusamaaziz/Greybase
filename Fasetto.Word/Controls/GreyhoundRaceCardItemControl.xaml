@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     MinWidth="800"
     MinHeight="100"
+    d:DataContext="{d:DesignInstance Type=local:RaceCardItemDesignModel}"
     d:DesignHeight="200"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -45,7 +46,7 @@
             <!--  Greyhound Name  -->
             <Button
                 Grid.Column="1"
-                Style="{StaticResource MaterialDesignToolForegroundButton}"
+                Style="{StaticResource MaterialDesignFlatButton}"
                 ToolTip="Greyhound">
                 <TextBlock
                     Padding="5"
@@ -104,7 +105,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="Auto"
-                    Binding="{Binding Date}"
+                    Binding="{Binding Date, StringFormat='dd-MM-yyyy'}"
                     Header="Date"
                     IsReadOnly="True" />
                 <DataGridTextColumn
@@ -124,16 +125,26 @@
                     IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="Auto"
-                    Binding="{Binding Win2nd}"
-                    Header="Win/2nd"
+                    Binding="{Binding Bends}"
+                    Header="Bends"
                     IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="Auto"
-                    Binding="{Binding Grade}"
-                    Header="Grade"
+                    Binding="{Binding Pos}"
+                    Header="POS"
                     IsReadOnly="True" />
                 <DataGridTextColumn
-                    Width="*"
+                    Width="Auto"
+                    Binding="{Binding DistanceBeaten}"
+                    Header="Distance beaten"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Beat}"
+                    Header="Beat/Beaten by"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
                     Binding="{Binding Remarks}"
                     Header="Remarks"
                     IsReadOnly="True" />
@@ -149,11 +160,21 @@
                     IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="Auto"
+                    Binding="{Binding Grade}"
+                    Header="Grade"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding CalTime}"
+                    Header="Cal Time"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
                     Binding="{Binding Racecode}"
                     Header="Racecode"
                     IsReadOnly="True" />
                 <DataGridTextColumn
-                    Width="*"
+                    Width="Auto"
                     Binding="{Binding Notes}"
                     EditingElementStyle="{StaticResource MaterialDesignTextBox}"
                     Header="Notes" />

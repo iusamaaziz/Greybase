@@ -20,28 +20,12 @@
                     ViewportUnits="RelativeToBoundingBox" />
             </Grid.Background>-->
 
-
-            <!--<Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>-->
-
-
             <materialDesign:Card
                 Margin="50"
                 VerticalAlignment="Top"
                 Background="{StaticResource BackgroundDarkBrush}"
                 UniformCornerRadius="3">
-                <local:RaceCardListControl />
+                <local:GreyhoundProfileControl Margin="0,3" />
             </materialDesign:Card>
         </Grid>
     </Border>

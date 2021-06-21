@@ -21,98 +21,73 @@ namespace GreyBase
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap1",
-					Greyhound = new GreyhoundProfileViewModel() { Name = "Severiano", Trainer = new TrainerViewModel() { Name = "Angela Harrison" } },
+					Greyhound = new GreyhoundProfileModel() { Name = "Severiano", Trainer = new TrainerModel() { Name = "Angela Harrison" } },
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
 					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
+						Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks",
+						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210", DistanceBeaten = "50m", Beat = "Kicifrázva", Pos = "2nd"
 					},
 					new RaceCardResultRowViewModel
 					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
+						Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks",
+						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"
+					},
+					new RaceCardResultRowViewModel
+					{
+						Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks",
+						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"
 					}}
 				},
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap2",
-					Greyhound = new GreyhoundProfileViewModel() { Name = "Bramble Tobby", Trainer = new TrainerViewModel() { Name = "Steven Anderson" } },
+					Greyhound = new GreyhoundProfileModel() { Name = "Bramble Tobby", Trainer = new TrainerModel() { Name = "Steven Anderson" } },
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					},
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"},
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					}}
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"}}
 				},
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap3",
-					Greyhound = new GreyhoundProfileViewModel() { Name = "Lunaria", Trainer = new TrainerViewModel() { Name = "Raymond  Hale" } },
+					Greyhound = new GreyhoundProfileModel() { Name = "Lunaria", Trainer = new TrainerModel() { Name = "Raymond  Hale" } },
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					},
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"},
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					}}
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"},
+					new RaceCardResultRowViewModel
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"}}
 				},
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap4",
-					Greyhound = new GreyhoundProfileViewModel() { Name = "Lunaria", Trainer = new TrainerViewModel() { Name = "Raymond  Hale" } },
+					Greyhound = new GreyhoundProfileModel() { Name = "Lunaria", Trainer = new TrainerModel() { Name = "Raymond  Hale" } },
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					},
-					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					}}
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"}}
 				},
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap5",
-					Greyhound = new GreyhoundProfileViewModel() { Name = "Lunaria", Trainer = new TrainerViewModel() { Name = "Raymond  Hale" } },
+					Greyhound = new GreyhoundProfileModel() { Name = "Lunaria", Trainer = new TrainerModel() { Name = "Raymond  Hale" } },
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					},
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"},
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					}}
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"}}
 				},
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap6",
-					Greyhound = new GreyhoundProfileViewModel() { Name = "Lunaria", Trainer = new TrainerViewModel() { Name = "Raymond  Hale" } },
+					Greyhound = new GreyhoundProfileModel() { Name = "Lunaria", Trainer = new TrainerModel() { Name = "Raymond  Hale" } },
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					},
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"},
 					new RaceCardResultRowViewModel
-					{
-						Date = DateTime.Now, Distance = "450", Win2nd = "Nitro June", Remarks = "Sample remarks",
-						Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split ="210"
-					}}
+					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"}}
 				}
 			};
 		}
