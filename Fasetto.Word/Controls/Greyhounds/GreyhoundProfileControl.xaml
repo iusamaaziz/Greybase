@@ -6,13 +6,17 @@
     xmlns:local="clr-namespace:GreyBase"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{x:Static local:GreyhoundProfileDesignModel.Instance}"
     d:DesignHeight="450"
     d:DesignWidth="700"
     mc:Ignorable="d">
 
-    <Border CornerRadius="4" Background="{StaticResource MaterialDesignDarkBackground}">
+    <Border Background="{StaticResource MaterialDesignDarkBackground}" CornerRadius="4">
         <Border.Effect>
-            <DropShadowEffect BlurRadius="4" ShadowDepth="2" Color="{StaticResource HoverLightBlue}" />
+            <DropShadowEffect
+                BlurRadius="4"
+                ShadowDepth="2"
+                Color="{StaticResource HoverLightBlue}" />
         </Border.Effect>
         <DockPanel>
             <TextBlock
@@ -23,10 +27,7 @@
                 Foreground="{StaticResource ForegroundLightBrush}"
                 Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                 Text="Profile" />
-            <Grid
-                Background="{StaticResource MaterialDesignCardBackground}"
-                DataContext="{x:Static local:GreyhoundProfileDesignModel.Instance}"
-                DockPanel.Dock="Bottom">
+            <Grid Background="{StaticResource MaterialDesignCardBackground}" DockPanel.Dock="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
@@ -85,11 +86,12 @@
                     Orientation="Horizontal">
                     <TextBlock
                         Margin="5,0"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Style="{StaticResource HeaderText}"
                         Text="DOB:" />
                     <TextBlock
-                        Padding="5"
+                        Padding="5,0"
                         VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
@@ -106,16 +108,23 @@
                     Orientation="Horizontal">
                     <TextBlock
                         Margin="5,0"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Style="{StaticResource HeaderText}"
                         Text="Trained By:" />
-                    <Button Style="{StaticResource MaterialDesignToolForegroundButton}" ToolTip="Trainer">
+                    <TextBlock
+                        Padding="5"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource WordGreenBrush}"
+                        Text="{Binding Greyhound.Trainer.Name}" />
 
-                        <TextBlock
-                            Padding="5"
-                            FontSize="{StaticResource FontSizeSmall}"
-                            Foreground="{StaticResource WordGreenBrush}"
-                            Text="{Binding Greyhound.Trainer.Name}" />
+                    <Button
+                        Grid.Column="1"
+                        Cursor="Pen"
+                        Style="{StaticResource MaterialDesignToolForegroundButton}"
+                        ToolTip="Edit">
+                        <Image MaxHeight="20" Source="{StaticResource EditPersonIcon}" />
                     </Button>
 
                 </StackPanel>
