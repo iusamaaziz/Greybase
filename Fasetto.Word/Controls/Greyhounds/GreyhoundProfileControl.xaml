@@ -10,7 +10,10 @@
     d:DesignWidth="700"
     mc:Ignorable="d">
 
-    <Border CornerRadius="5">
+    <Border CornerRadius="4" Background="{StaticResource MaterialDesignDarkBackground}">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="4" ShadowDepth="2" Color="{StaticResource HoverLightBlue}" />
+        </Border.Effect>
         <DockPanel>
             <TextBlock
                 Padding="5"

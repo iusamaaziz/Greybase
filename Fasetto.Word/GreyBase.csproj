@@ -51,6 +51,9 @@
     <Reference Include="Microsoft.Windows.Shell, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.1.52.1\lib\netstandard10\PropertyChanged.dll</HintPath>
       <Private>False</Private>
@@ -76,9 +79,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animation\FrameworkElementAnimations.cs" />
     <Compile Include="Animation\PageAnimation.cs" />
     <Compile Include="Animation\PageAnimations.cs" />
     <Compile Include="Animation\StoryboardHelpers.cs" />
+    <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\FrameworkElementAnimationAttachedProperties.cs" />
     <Compile Include="Controls\GreyhoundRaceCardItemControl.xaml.cs">
       <DependentUpon>GreyhoundRaceCardItemControl.xaml</DependentUpon>
     </Compile>
@@ -98,6 +104,10 @@
       <DependentUpon>SideMenuListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModels\ApplicationPage.cs" />
+    <Compile Include="DataModels\ElementHorizontalAlignment.cs" />
+    <Compile Include="IoC\Base\IoC.cs" />
+    <Compile Include="IoC\Interfaces\IUIManager.cs" />
+    <Compile Include="IoC\UIManager.cs" />
     <Compile Include="Models\RaceDetailsModel.cs" />
     <Compile Include="Models\RaceResultDataModel.cs" />
     <Compile Include="Models\RaceResultModel.cs" />
@@ -107,14 +117,22 @@
     </Compile>
     <Compile Include="ValueConvertors\ApplicationPageValueConvertor.cs" />
     <Compile Include="ValueConvertors\BaseValueConvertor.cs" />
+    <Compile Include="ValueConvertors\HorizontalAlignmentConverter.cs" />
     <Compile Include="ValueConvertors\TrapToImageSourceConvertor.cs" />
     <Compile Include="ValueConvertors\StringRGBToBrushConvertor.cs" />
     <Compile Include="ValueConvertors\BooleanToVisibilityConvertor.cs" />
+    <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
     <Compile Include="Models\GreyhoundProfileModel.cs" />
+    <Compile Include="ViewModel\Base\RelayParameterizedCommand.cs" />
+    <Compile Include="ViewModel\Dialogs\BaseDialogViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\MessageBoxDialogDesignModel.cs" />
+    <Compile Include="ViewModel\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModel\Greyhounds\GreyhoundProfileDesignModel.cs" />
     <Compile Include="ViewModel\Greyhounds\GreyhoundProfileViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\BasePopupMenuViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\GreyhoundProfilePopupMenuViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardListDesignModel.cs" />

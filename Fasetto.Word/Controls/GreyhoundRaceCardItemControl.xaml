@@ -46,6 +46,7 @@
             <!--  Greyhound Name  -->
             <Button
                 Grid.Column="1"
+                Command="{Binding AttachmentButtonCommand}"
                 Style="{StaticResource MaterialDesignFlatButton}"
                 ToolTip="Greyhound">
                 <TextBlock
@@ -55,6 +56,14 @@
                     Foreground="{StaticResource ForegroundLightBrush}"
                     Text="{Binding Greyhound.Name}" />
             </Button>
+
+            <local:GreyhoundProfileControl Grid.Column="1"
+                                           Grid.Row="1"
+                                           Grid.ColumnSpan="5"
+                                           Margin="5"
+                                           local:AnimateSlideInFromBottomProperty.Value="{Binding AttachmentMenuVisible}"
+                                           
+                                           />
 
             <!--  Play Video Icon  -->
             <materialDesign:Card

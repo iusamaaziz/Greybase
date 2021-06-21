@@ -25,7 +25,7 @@
                 VerticalAlignment="Top"
                 Background="{StaticResource BackgroundDarkBrush}"
                 UniformCornerRadius="3">
-                <local:GreyhoundProfileControl Margin="0,3" />
+                <local:RaceCardListControl Margin="0,3" />
             </materialDesign:Card>
         </Grid>
     </Border>
