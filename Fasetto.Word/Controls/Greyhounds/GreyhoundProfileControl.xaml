@@ -7,7 +7,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DataContext="{x:Static local:GreyhoundProfileDesignModel.Instance}"
-    d:DesignHeight="450"
+    d:DesignHeight="200"
     d:DesignWidth="700"
     mc:Ignorable="d">
 
@@ -27,110 +27,384 @@
                 Foreground="{StaticResource ForegroundLightBrush}"
                 Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                 Text="Profile" />
-            <Grid Background="{StaticResource MaterialDesignCardBackground}" DockPanel.Dock="Bottom">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+            <!--  Profile  -->
+            <Border
+                BorderThickness="1"
+                CornerRadius="4"
+                DockPanel.Dock="Top">
+                <Grid Background="{StaticResource MaterialDesignCardBackground}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-                <!--  Name  -->
-                <TextBlock
-                    Grid.ColumnSpan="1"
-                    Margin="10,10,10,15"
-                    Padding="5"
-                    HorizontalAlignment="Center"
-                    FontSize="{StaticResource FontSizeRegular}"
-                    Foreground="{StaticResource WordOrangeBrush}"
-                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                    Text="{Binding Greyhound.Name}"
-                    ToolTip="Name" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-
-                <!--  RPID  -->
-                <StackPanel
-                    Grid.Column="1"
-                    Margin="0,0,15,0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
+                    <!--  Name  -->
                     <TextBlock
-                        Margin="5,0"
-                        Padding="5"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        Style="{StaticResource HeaderText}"
-                        Text="RPID:" />
-                    <TextBlock
-                        Padding="5"
+                        Grid.ColumnSpan="1"
+                        Padding="10"
+                        HorizontalAlignment="Center"
+                        FontSize="{StaticResource FontSizeRegular}"
+                        Foreground="{StaticResource WordOrangeBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="{Binding Greyhound.Name}"
+                        ToolTip="Name" />
+
+
+                    <!--  RPID  -->
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        Foreground="{StaticResource WordBlueBrush}"
-                        Text="{Binding Greyhound.RPID}" />
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            Padding="5"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="RPID:" />
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource WordBlueBrush}"
+                            Text="{Binding Greyhound.RPID}" />
 
-                </StackPanel>
+                    </StackPanel>
 
-                <!--  Dob  -->
-                <StackPanel
-                    Grid.Column="2"
-                    Margin="0,0,15,0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
-                    <TextBlock
-                        Margin="5,0"
+                    <!--  DOB  -->
+                    <StackPanel
+                        Grid.Column="2"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        Style="{StaticResource HeaderText}"
-                        Text="DOB:" />
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="DOB:" />
+                        <TextBlock
+                            Padding="5,0"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource ForegroundLightBrush}"
+                            Text="{Binding Greyhound.Dob, StringFormat='dd-MM-yyyy'}" />
+
+                    </StackPanel>
+
+                    <!--  Trainer  -->
+                    <StackPanel
+                        Grid.Column="3"
+                        Grid.ColumnSpan="2"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="Trained By:" />
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource WordGreenBrush}"
+                            Text="{Binding Greyhound.Trainer.Name}" />
+
+                        <!--  Edit Trainer  -->
+                        <Button
+                            Grid.Column="1"
+                            Cursor="Pen"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            ToolTip="Edit">
+                            <Image MaxHeight="20" Source="{StaticResource EditPersonIcon}" />
+                        </Button>
+
+                    </StackPanel>
+
+                    <!--  Sex  -->
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            Padding="5"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="Color:" />
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource WordBlueBrush}"
+                            Text="{Binding Greyhound.Color}" />
+
+                    </StackPanel>
+
+                    <!--  Sire  -->
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            Padding="5"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="Sire:" />
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource WordBlueBrush}"
+                            Text="{Binding Greyhound.Sire}" />
+
+                    </StackPanel>
+
+                    <!--  Dam  -->
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            Padding="5"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="Dam:" />
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource WordBlueBrush}"
+                            Text="{Binding Greyhound.Dam}" />
+
+                    </StackPanel>
+
+                    <!--  Sex  -->
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,0"
+                            Padding="5"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            FontWeight="Bold"
+                            Style="{StaticResource HeaderText}"
+                            Text="Sex:" />
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource WordBlueBrush}"
+                            Text="{Binding Greyhound.Sex}" />
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+            <!--  Tracking Data  -->
+            <Border
+                Margin="0,3,0,0"
+                BorderThickness="1"
+                CornerRadius="4"
+                DockPanel.Dock="Top">
+                <Grid Background="{StaticResource MaterialDesignCardBackground}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Ideal Trap  -->
                     <TextBlock
-                        Padding="5,0"
+                        Padding="10"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
-                        Text="{Binding Greyhound.Dob, StringFormat='dd-MM-yyyy'}" />
-
-                </StackPanel>
-
-                <!--  Trainer  -->
-                <StackPanel
-                    Grid.Column="4"
-                    Margin="0,0,15,0"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
-                    <TextBlock
-                        Margin="5,0"
-                        VerticalAlignment="Center"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        Style="{StaticResource HeaderText}"
-                        Text="Trained By:" />
-                    <TextBlock
-                        Padding="5"
-                        VerticalAlignment="Center"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        Foreground="{StaticResource WordGreenBrush}"
-                        Text="{Binding Greyhound.Trainer.Name}" />
-
-                    <Button
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="Ideal Trap" />
+                    <TextBox
                         Grid.Column="1"
-                        Cursor="Pen"
-                        Style="{StaticResource MaterialDesignToolForegroundButton}"
-                        ToolTip="Edit">
-                        <Image MaxHeight="20" Source="{StaticResource EditPersonIcon}" />
-                    </Button>
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Ideal Trap"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.IdealTrap}" />
 
-                </StackPanel>
 
-            </Grid>
+
+
+                    <!--  FirstBendTrap  -->
+                    <TextBlock
+                        Grid.Column="2"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="1st Bend Trap" />
+                    <TextBox
+                        Grid.Column="3"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="FirstBendTrap"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.FirstBendTrap}" />
+
+
+                    <!--  Backstraight  -->
+                    <TextBlock
+                        Grid.Column="4"
+                        Grid.ColumnSpan="1"
+                        Margin="0,0,15,0"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="Backstraight" />
+                    <TextBox
+                        Grid.Column="5"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Backstraight"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.BackStraight}" />
+
+
+                    <!--  Kick  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,15,0"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="Kick" />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Kick"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.Kick}" />
+
+
+                    <!--  RealGrade  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="RealGrade" />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Kick"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.RealGrade}" />
+
+
+                    <!--  Rating  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="Rating" />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="5"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Kick"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.Rating}" />
+
+
+                </Grid>
+
+            </Border>
+
         </DockPanel>
     </Border>
-
 </UserControl>

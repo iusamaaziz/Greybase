@@ -21,7 +21,25 @@ namespace GreyBase
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap1",
-					Greyhound = new GreyhoundProfileModel() { Name = "Severiano", Trainer = new TrainerModel() { Name = "Angela Harrison" } },
+					Greyhound = new GreyhoundProfileModel
+					{
+						Name = "Ballymac Lydia",
+						Dob = DateTime.Now,
+						Color = "Black",
+						RPID = "527890",
+						Sire = "Pinpoint Maxi",
+						Dam = "Moyar Kite",
+						Sex = "Bitch",
+
+						Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+						IdealTrap = 1.0m,
+						FirstBendTrap = 2.25m,
+						BackStraight = 120,
+						Kick = 300,
+						RealGrade = "OA",
+						Rating = "5"
+					},
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
 					{
@@ -42,7 +60,25 @@ namespace GreyBase
 				new RaceCardItemDesignModel
 				{
 					Trap = "Trap2",
-					Greyhound = new GreyhoundProfileModel() { Name = "Bramble Tobby", Trainer = new TrainerModel() { Name = "Steven Anderson" } },
+					Greyhound = new GreyhoundProfileModel
+					{
+						Name = "Bramble Tobby",
+						Dob = DateTime.Now,
+						Color = "Black",
+						RPID = "527890",
+						Sire = "Pinpoint Maxi",
+						Dam = "Moyar Kite",
+						Sex = "Bitch",
+
+						Trainer = new TrainerModel { Name = "J W Gaskin" },
+
+						IdealTrap = 1.0m,
+						FirstBendTrap = 2.25m,
+						BackStraight = 120,
+						Kick = 300,
+						RealGrade = "OA",
+						Rating = "5"
+					},
 					Races = new List<RaceCardResultRowViewModel>{
 					new RaceCardResultRowViewModel
 					{Date = DateTime.Now, Distance = "450", Bends = "Nitro June", Remarks = "Sample remarks", Grade = "OA", BSP = "7/2", CalTime = "CalTime", Racecode = $"{DateTime.Now.ToShortDateString()}Cray {DateTime.Now.ToShortTimeString()}", Trap = "2", SP = "10/F", Split = "210", DistanceBeaten = "100m", Beat = "Sadipscing", Pos = "1st"},

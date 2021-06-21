@@ -56,13 +56,15 @@
                     Text="{Binding Greyhound.Name}" />
             </Button>
 
-            <local:GreyhoundProfileControl Grid.Column="1"
-                                           Grid.Row="1"
-                                           Grid.ColumnSpan="5"
-                                           Margin="5"
-                                           local:AnimateSlideInFromBottomProperty.Value="{Binding AttachmentMenuVisible}"
-                                           
-                                           />
+            <!--  Greyhound Profile Popup  -->
+            <ScrollViewer
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+                local:AnimateSlideInFromBottomProperty.Value="{Binding AttachmentMenuVisible}"
+                HorizontalScrollBarVisibility="Auto">
+                <local:GreyhoundProfileControl Margin="10" />
+            </ScrollViewer>
 
             <!--  Play Video Icon  -->
             <materialDesign:Card
