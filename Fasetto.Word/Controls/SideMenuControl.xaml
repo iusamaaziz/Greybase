@@ -25,7 +25,7 @@
 
                             <!--  Click to open message  -->
                             <Border.InputBindings>
-                                <MouseBinding Command="{Binding OpenMessageCommand}" MouseAction="LeftClick" />
+                                <MouseBinding Command="{Binding OpenPageCommand}" MouseAction="LeftClick" />
                             </Border.InputBindings>
 
                             <Grid x:Name="container" Background="Transparent">

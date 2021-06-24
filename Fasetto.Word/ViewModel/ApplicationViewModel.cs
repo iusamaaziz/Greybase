@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 using GreyBase.DataModels;
 
@@ -42,9 +44,10 @@ namespace GreyBase.ViewModel
 
 			// Set the view model
 			CurrentPageViewModel = viewModel;
-
+			SideMenuListViewModel.Items.ForEach(a => a.IsActive = false);
+			((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = page;
 			// Set the current page
-			CurrentPage = page;
+			//CurrentPage = page;
 
 			// Fire off a CurrentPage changed event
 			OnPropertyChanged(nameof(CurrentPage));

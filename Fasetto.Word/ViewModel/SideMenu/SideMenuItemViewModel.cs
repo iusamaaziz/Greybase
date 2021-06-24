@@ -19,7 +19,7 @@ namespace GreyBase
 		/// <summary>
 		/// Opens the current message thread
 		/// </summary>
-		public ICommand OpenMessageCommand { get; set; }
+		public ICommand OpenPageCommand { get; set; }
 
 		#endregion
 
@@ -31,84 +31,38 @@ namespace GreyBase
 		public SideMenuItemViewModel()
 		{
 			// Create commands
-			OpenMessageCommand = new RelayCommand(OpenMessage);
+			OpenPageCommand = new RelayCommand(OpenPage);
 		}
 
 		#endregion
 
 		#region Command Methods
 
-		public void OpenMessage()
+		public void OpenPage()
 		{
+			switch (Name)
+			{
+				case "Dashboard":
+					IoC.Application.GoToPage(ApplicationPage.Dashboard);
+					break;
+				case "Race Results":
+					IoC.Application.GoToPage(ApplicationPage.RaceResult);
+					break;
+				case "Race Cards":
+					IoC.Application.GoToPage(ApplicationPage.RaceCard);
+					break;
+				case "Import Files":
+					IoC.Application.GoToPage(ApplicationPage.Import);
+					break;
+				case "Greyhounds":
+					IoC.Application.GoToPage(ApplicationPage.Greyhound);
+					break;
+				default:
+					IsActive = false;
+					break;
+			}
+			IsActive = true;
 
-			IoC.Application.GoToPage(ApplicationPage.RaceResult);
-			//if (Name == "Jesse")
-			//{
-			//	IoC.Application.GoToPage(ApplicationPage.Login, new LoginViewModel
-			//	{
-			//		Email = "jesse@helloworld.com"
-			//	});
-			//	return;
-			//}
-
-			//IoC.Application.GoToPage(ApplicationPage.Chat, new ChatMessageListViewModel
-			//{
-			//	Items = new List<ChatMessageListItemViewModel>
-			//	{
-			//		new ChatMessageListItemViewModel
-			//		{
-			//			Message = Message,
-			//			Initials = Initials,
-			//			MessageSentTime = DateTime.UtcNow,
-			//			ProfilePictureRGB = "FF00FF",
-			//			SenderName = "Luke",
-			//			SentByMe = true,
-			//		},
-			//		new ChatMessageListItemViewModel
-			//		{
-			//			Message = "A received message",
-			//			Initials = Initials,
-			//			MessageSentTime = DateTime.UtcNow,
-			//			ProfilePictureRGB = "FF0000",
-			//			SenderName = "Parnell",
-			//			SentByMe = false,
-			//		},                    new ChatMessageListItemViewModel
-			//		{
-			//			Message = "A received message",
-			//			Initials = Initials,
-			//			MessageSentTime = DateTime.UtcNow,
-			//			ProfilePictureRGB = "FF0000",
-			//			SenderName = "Parnell",
-			//			SentByMe = false,
-			//		},
-			//		new ChatMessageListItemViewModel
-			//		{
-			//			Message = Message,
-			//			Initials = Initials,
-			//			MessageSentTime = DateTime.UtcNow,
-			//			ProfilePictureRGB = "FF00FF",
-			//			SenderName = "Luke",
-			//			SentByMe = true,
-			//		},
-			//		new ChatMessageListItemViewModel
-			//		{
-			//			Message = "A received message",
-			//			Initials = Initials,
-			//			MessageSentTime = DateTime.UtcNow,
-			//			ProfilePictureRGB = "FF0000",
-			//			SenderName = "Parnell",
-			//			SentByMe = false,
-			//		},                    new ChatMessageListItemViewModel
-			//		{
-			//			Message = "A received message",
-			//			Initials = Initials,
-			//			MessageSentTime = DateTime.UtcNow,
-			//			ProfilePictureRGB = "FF0000",
-			//			SenderName = "Parnell",
-			//			SentByMe = false,
-			//		},
-			//	}
-			//});
 		}
 
 		#endregion

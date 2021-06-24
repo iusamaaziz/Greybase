@@ -14,6 +14,8 @@ namespace GreyBase.DataModels
 		Login,
 		Dashboard,
 		RaceCard,
-		RaceResult
+		RaceResult,
+		Import,
+		Greyhound
 	}
 }

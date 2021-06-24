@@ -127,6 +127,95 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+
+                        <Border
+                            x:Name="background"
+                            Padding="0,0,8,0"
+                            Background="{StaticResource BackgroundDarkBrush}">
+
+                            <!--  Click to open message  -->
+                            <Border.InputBindings>
+                                <MouseBinding Command="{Binding OpenMessageCommand}" MouseAction="LeftClick" />
+                            </Border.InputBindings>
+
+                            <Grid x:Name="container" Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  Side Bar  -->
+                                <Border
+                                    Grid.Column="0"
+                                    Width="4"
+                                    Background="WhiteSmoke"
+                                    Visibility="{Binding IsActive, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
+                                <!--  Button Icon  -->
+                                <Border Grid.Column="1" Padding="8">
+                                    <Border
+                                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                                        MinWidth="20"
+                                        Background="Transparent"
+                                        CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                                        <Image Source="{Binding IconPath}" />
+                                    </Border>
+                                </Border>
+                                <!--  Button Text  -->
+                                <TextBlock
+                                    Grid.Column="3"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="{StaticResource FontSizeSmall}"
+                                    Foreground="{StaticResource ForegroundLightBrush}"
+                                    Text="{Binding Name}" />
+
+                            </Grid>
+
+                        </Border>
+
+                        <!--  Hover Animations  -->
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                <Setter TargetName="background" Property="Background" Value="{StaticResource SelectedLightBlueBrush}" />
+                            </DataTrigger>
+
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="container"
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="{StaticResource HoverVeryLightBlue}"
+                                            Duration="0:0:0.3" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="container"
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="Transparent"
+                                            Duration="0:0:0.3" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="container" Property="Background" Value="{StaticResource HoverDarkBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
 
     <WindowChrome.WindowChrome>
@@ -140,9 +229,10 @@
     <Border Background="{StaticResource BackgroundDarkBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" MaxWidth="200" />
+                <ColumnDefinition Width="1*" MaxWidth="180" />
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
+
 
             <!--  Side Menu  -->
             <local:SideMenuListControl VerticalAlignment="Top" />

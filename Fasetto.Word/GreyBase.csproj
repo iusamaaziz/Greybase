@@ -124,6 +124,12 @@
     <Compile Include="Pages\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GreyhoundProfilePage.xaml.cs">
+      <DependentUpon>GreyhoundProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ImportFilePage.xaml.cs">
+      <DependentUpon>ImportFilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValueConvertors\ApplicationPageHelpers.cs" />
     <Compile Include="ValueConvertors\ApplicationPageValueConvertor.cs" />
     <Compile Include="ValueConvertors\BaseValueConvertor.cs" />
@@ -205,6 +211,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\DashboardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GreyhoundProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ImportFilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

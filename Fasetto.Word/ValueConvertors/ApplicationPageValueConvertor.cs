@@ -24,6 +24,10 @@ namespace GreyBase
 					return null;
 				case ApplicationPage.Dashboard:
 					return new DashboardPage();
+				case ApplicationPage.Import:
+					return new ImportFilePage();
+				case ApplicationPage.Greyhound:
+					return new GreyhoundProfilePage();
 			}
 		}
 
