@@ -36,5 +36,8 @@ namespace GreyBase
 
 		public string Rating { get; set; }
 
+		public string AvgSplit { get; set; }
+
+		public string PaceToBend { get; set; }
 	}
 }

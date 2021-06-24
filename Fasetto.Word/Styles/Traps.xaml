@@ -11,6 +11,7 @@
     <BitmapImage x:Key="Trap6" UriSource="/Images/Traps/trap6.png" />
     <BitmapImage x:Key="PlayIcon" UriSource="/Images/Icons/icons8_video_playlist_48px_1.png" />
     <BitmapImage x:Key="EditPersonIcon" UriSource="/Images/Icons/icons8_edit_profile_24px.png" />
+    <BitmapImage x:Key="BrowseFileIcon" UriSource="/Images/Icons/icons8_browse_folder_24px.png" />
 
 
 </ResourceDictionary>

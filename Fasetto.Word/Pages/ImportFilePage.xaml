@@ -4,11 +4,135 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:GreyBase"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="ImportFilePage"
+    Title="Import Race Results"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Background="{StaticResource MaterialDesignDarkBackground}"
+    DataContext="{x:Type local:RaceResultImportViewModel}"
     mc:Ignorable="d">
 
-    <Button Content="import" />
+    <Border Margin="20" CornerRadius="5">
+        <materialDesign:Card>
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+
+                    <TextBlock
+                        FontSize="{StaticResource FontSizeRegular}"
+                        FontWeight="Medium"
+                        Style="{StaticResource HeaderText}"
+                        Text="Import Race Results" />
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource ForegroundLightBrush}"
+                            Text="Selected File :" />
+                        <TextBox
+                            x:Name="SelectedFilePath"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            Background="{StaticResource AttentionToActionBrush}"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="DimGray"
+                            IsReadOnly="True"
+                            Text="{Binding SelectedFileName}" />
+                        <Button
+                            x:Name="Browse"
+                            Grid.Column="2"
+                            Margin="5,0"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Command="{Binding BrowseFileCommand}"
+                            ToolTip="Browse">
+                            <Image Source="{StaticResource BrowseFileIcon}" />
+                        </Button>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="{StaticResource ForegroundLightBrush}"
+                            Text="Select Sheet :" />
+                        <ComboBox
+                            x:Name="Sheets"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Padding="4"
+                            VerticalAlignment="Center"
+                            Background="{StaticResource AttentionToActionBrush}"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Foreground="DimGray"
+                            IsReadOnly="True"
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            Text="No file selected." />
+
+                    </Grid>
+                </StackPanel>
+
+                <DataGrid
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    DockPanel.Dock="Bottom"
+                    GridLinesVisibility="Vertical"
+                    HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.CanContentScroll="True"
+                    Style="{StaticResource MaterialDesignDataGrid}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="Auto" Header="Day" />
+                        <DataGridTextColumn Width="Auto" Header="Track" />
+                        <DataGridTextColumn Width="Auto" Header="Time" />
+
+                        <DataGridTextColumn Width="Auto" Header="1st" />
+                        <DataGridTextColumn Width="Auto" Header="Dog" />
+                        <DataGridTextColumn Width="Auto" Header="BSP" />
+                        <DataGridTextColumn Width="Auto" Header="ISP" />
+
+                        <DataGridTextColumn Width="Auto" Header="2nd" />
+                        <DataGridTextColumn Width="Auto" Header="Dog" />
+                        <DataGridTextColumn Width="Auto" Header="BSP" />
+                        <DataGridTextColumn Width="Auto" Header="ISP" />
+
+                        <DataGridTextColumn Width="Auto" Header="3rd" />
+                        <DataGridTextColumn Width="Auto" Header="Dog" />
+                        <DataGridTextColumn Width="Auto" Header="BSP" />
+                        <DataGridTextColumn Width="Auto" Header="ISP" />
+
+                        <DataGridTextColumn Width="Auto" Header="4th" />
+                        <DataGridTextColumn Width="Auto" Header="Dog" />
+                        <DataGridTextColumn Width="Auto" Header="BSP" />
+                        <DataGridTextColumn Width="Auto" Header="ISP" />
+
+                        <DataGridTextColumn Width="Auto" Header="5th" />
+                        <DataGridTextColumn Width="Auto" Header="Dog" />
+                        <DataGridTextColumn Width="Auto" Header="BSP" />
+                        <DataGridTextColumn Width="Auto" Header="ISP" />
+
+                        <DataGridTextColumn Width="Auto" Header="6th" />
+                        <DataGridTextColumn Width="Auto" Header="Dog" />
+                        <DataGridTextColumn Width="Auto" Header="BSP" />
+                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </DockPanel>
+        </materialDesign:Card>
+    </Border>
+
 </Page>

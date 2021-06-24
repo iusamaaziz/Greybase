@@ -23,6 +23,8 @@ namespace GreyBase
 		public ImportFilePage()
 		{
 			InitializeComponent();
+
+			this.DataContext = new RaceResultImportViewModel();
 		}
 	}
 }

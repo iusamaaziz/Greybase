@@ -241,7 +241,8 @@
             <Frame
                 x:Name="MainFrame"
                 Grid.Column="1"
-                Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConvertor}}" />
+                Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConvertor}}"
+                NavigationUIVisibility="Hidden" />
         </Grid>
     </Border>
 

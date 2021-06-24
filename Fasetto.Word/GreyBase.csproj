@@ -86,7 +86,7 @@
     <Compile Include="Animation\StoryboardHelpers.cs" />
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
     <Compile Include="AttachedProperties\FrameworkElementAnimationAttachedProperties.cs" />
-    <Compile Include="Controls\GreyhoundRaceCardItemControl.xaml.cs">
+    <Compile Include="Controls\RaceCards\GreyhoundRaceCardItemControl.xaml.cs">
       <DependentUpon>GreyhoundRaceCardItemControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Greyhounds\GreyhoundProfileControl.xaml.cs">
@@ -95,7 +95,7 @@
     <Compile Include="Controls\PageHost.xaml.cs">
       <DependentUpon>PageHost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\RaceCardListControl.xaml.cs">
+    <Compile Include="Controls\RaceCards\RaceCardListControl.xaml.cs">
       <DependentUpon>RaceCardListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\RaceResults\RaceResultListControl.xaml.cs">
@@ -104,10 +104,10 @@
     <Compile Include="Controls\RaceResults\RaceResultListHorizontalControl.xaml.cs">
       <DependentUpon>RaceResultListHorizontalControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SideMenuControl.xaml.cs">
+    <Compile Include="Controls\SideMenu\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SideMenuListControl.xaml.cs">
+    <Compile Include="Controls\SideMenu\SideMenuListControl.xaml.cs">
       <DependentUpon>SideMenuListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModels\ApplicationPage.cs" />
@@ -119,6 +119,7 @@
     <Compile Include="Models\GreyhoundTrapModel.cs" />
     <Compile Include="Models\RaceDetailsModel.cs" />
     <Compile Include="Models\RaceResultDataModel.cs" />
+    <Compile Include="Models\RaceResultImportModel.cs" />
     <Compile Include="Models\RaceResultModel.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\DashboardPage.xaml.cs">
@@ -147,6 +148,7 @@
     <Compile Include="ViewModel\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModel\Greyhounds\GreyhoundProfileDesignModel.cs" />
     <Compile Include="ViewModel\Greyhounds\GreyhoundProfileViewModel.cs" />
+    <Compile Include="ViewModel\ImportFiles\RaceResultImportViewModel.cs" />
     <Compile Include="ViewModel\PopupMenu\BasePopupMenuViewModel.cs" />
     <Compile Include="ViewModel\PopupMenu\GreyhoundProfilePopupMenuViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardItemDesignModel.cs" />
@@ -166,7 +168,7 @@
     <Compile Include="Models\TrainerModel.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
-    <Page Include="Controls\GreyhoundRaceCardItemControl.xaml">
+    <Page Include="Controls\RaceCards\GreyhoundRaceCardItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,7 +180,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\RaceCardListControl.xaml">
+    <Page Include="Controls\RaceCards\RaceCardListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,11 +192,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SideMenuControl.xaml">
+    <Page Include="Controls\SideMenu\SideMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SideMenuListControl.xaml">
+    <Page Include="Controls\SideMenu\SideMenuListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -265,6 +267,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Images\Icons\icons8_browse_folder_24px.png" />
     <Resource Include="Images\Icons\icons8_edit_profile_24px.png" />
     <Resource Include="Images\Icons\icons8_video_playlist_48px_1.png" />
     <Resource Include="Images\Traps\trap1.png">

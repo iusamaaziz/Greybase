@@ -252,6 +252,8 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
@@ -327,6 +329,28 @@
                         Style="{StaticResource MaterialDesignTextBox}"
                         Text="{Binding Greyhound.BackStraight}" />
 
+                    <!--  Average Split  -->
+                    <TextBlock
+                        Grid.Column="6"
+                        Margin="0,0,15,0"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="Avg Split" />
+                    <TextBox
+                        Grid.Column="7"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Avg Split"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.AvgSplit}" />
+
 
                     <!--  Kick  -->
                     <TextBlock
@@ -400,6 +424,29 @@
                         Style="{StaticResource MaterialDesignTextBox}"
                         Text="{Binding Greyhound.Rating}" />
 
+                    <!--  Pace to Bend  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="6"
+                        Margin="0,0,15,0"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                        Text="Avg Split" />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="7"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        materialDesign:HintAssist.Hint="Bend Pace"
+                        materialDesign:ValidationAssist.UsePopup="True"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        Text="{Binding Greyhound.PaceToBend}" />
 
                 </Grid>
 
