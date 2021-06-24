@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:GreyBase"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -77,57 +78,174 @@
                             VerticalAlignment="Center"
                             Background="{StaticResource AttentionToActionBrush}"
                             FontSize="{StaticResource FontSizeSmall}"
-                            Foreground="DimGray"
+                            Foreground="{StaticResource ForegroundLightBrush}"
                             IsReadOnly="True"
+                            ItemsSource="{Binding Sheets}"
+                            SelectedIndex="{Binding SelectedSheetIndex}"
                             Style="{StaticResource MaterialDesignComboBox}"
-                            Text="No file selected." />
+                            Text="No file selected.">
+
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding SheetSelectedCommand}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+
+                        </ComboBox>
 
                     </Grid>
                 </StackPanel>
 
                 <DataGrid
-                    AutoGenerateColumns="False"
+                    AutoGenerateColumns="false"
                     CanUserAddRows="False"
                     CanUserDeleteRows="False"
                     DockPanel.Dock="Bottom"
                     GridLinesVisibility="Vertical"
                     HorizontalScrollBarVisibility="Auto"
+                    ItemsSource="{Binding Models}"
                     ScrollViewer.CanContentScroll="True"
                     Style="{StaticResource MaterialDesignDataGrid}">
+
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="Auto" Header="Day" />
-                        <DataGridTextColumn Width="Auto" Header="Track" />
-                        <DataGridTextColumn Width="Auto" Header="Time" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding Date}"
+                            Header="Day" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding Track}"
+                            Header="Track" />
 
-                        <DataGridTextColumn Width="Auto" Header="1st" />
-                        <DataGridTextColumn Width="Auto" Header="Dog" />
-                        <DataGridTextColumn Width="Auto" Header="BSP" />
-                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding Grade}"
+                            Header="Grade" />
 
-                        <DataGridTextColumn Width="Auto" Header="2nd" />
-                        <DataGridTextColumn Width="Auto" Header="Dog" />
-                        <DataGridTextColumn Width="Auto" Header="BSP" />
-                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding Distance}"
+                            Header="Distance" />
 
-                        <DataGridTextColumn Width="Auto" Header="3rd" />
-                        <DataGridTextColumn Width="Auto" Header="Dog" />
-                        <DataGridTextColumn Width="Auto" Header="BSP" />
-                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                        <DataGridTemplateColumn Width="Auto" Header="1st">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="20" Source="{Binding FirstPos, Converter={local:TrapToImageSourceConvertor}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding FirstDog}"
+                            Header="Dog" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding FirstBsp}"
+                            Header="BSP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding FirstIsp}"
+                            Header="ISP" />
 
-                        <DataGridTextColumn Width="Auto" Header="4th" />
-                        <DataGridTextColumn Width="Auto" Header="Dog" />
-                        <DataGridTextColumn Width="Auto" Header="BSP" />
-                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                        <DataGridTemplateColumn Width="Auto" Header="2nd">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="20" Source="{Binding SecondPos, Converter={local:TrapToImageSourceConvertor}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding SecondDog}"
+                            Header="Dog" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding SecondBsp}"
+                            Header="BSP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding SecondIsp}"
+                            Header="ISP" />
 
-                        <DataGridTextColumn Width="Auto" Header="5th" />
-                        <DataGridTextColumn Width="Auto" Header="Dog" />
-                        <DataGridTextColumn Width="Auto" Header="BSP" />
-                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                        <DataGridTemplateColumn Width="Auto" Header="3rd">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="20" Source="{Binding ThirdPos, Converter={local:TrapToImageSourceConvertor}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding ThirdDog}"
+                            Header="Dog" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding ThirdBsp}"
+                            Header="BSP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding ThirdIsp}"
+                            Header="ISP" />
 
-                        <DataGridTextColumn Width="Auto" Header="6th" />
-                        <DataGridTextColumn Width="Auto" Header="Dog" />
-                        <DataGridTextColumn Width="Auto" Header="BSP" />
-                        <DataGridTextColumn Width="Auto" Header="ISP" />
+                        <DataGridTemplateColumn Width="Auto" Header="4th">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="20" Source="{Binding ForthPos, Converter={local:TrapToImageSourceConvertor}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding ForthDog}"
+                            Header="Dog" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding ForthBsp}"
+                            Header="BSP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding ForthIsp}"
+                            Header="ISP" />
+
+                        <DataGridTemplateColumn Width="Auto" Header="5th">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="20" Source="{Binding FifthPos, Converter={local:TrapToImageSourceConvertor}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding FifthDog}"
+                            Header="Dog" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding FifthBsp}"
+                            Header="BSP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding FifthIsp}"
+                            Header="ISP" />
+
+                        <DataGridTemplateColumn Width="Auto" Header="6th">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="20" Source="{Binding SixthPos, Converter={local:TrapToImageSourceConvertor}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding SixthDog}"
+                            Header="Dog" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding SixthBsp}"
+                            Header="BSP" />
+                        <DataGridTextColumn
+                            Width="Auto"
+                            Binding="{Binding SixthIsp}"
+                            Header="ISP" />
                     </DataGrid.Columns>
 
                 </DataGrid>

@@ -13,18 +13,16 @@ namespace GreyBase.Models
 	{
 		#region Public Properties
 
-		/// <summary>
-		/// Contains only date in format 01-Jan
-		/// </summary>
 		public DateTime Date { get; set; }
 
 		public string Track { get; set; }
 
-		/// <summary>
-		/// Includes race time, grade and distance in format HH:MM Grade Distance
-		/// </summary>
-		public string RaceTime { get; set; }
+		public string Grade { get; set; }
 
+		public string Distance { get; set; }
+
+
+		public string FirstPos { get; set; }
 
 		public string FirstDog { get; set; }
 
@@ -33,12 +31,16 @@ namespace GreyBase.Models
 		public string FirstIsp { get; set; }
 
 
+		public string SecondPos { get; set; }
+
 		public string SecondDog { get; set; }
 
 		public string SecondBsp { get; set; }
 
 		public string SecondIsp { get; set; }
 
+
+		public string ThirdPos { get; set; }
 
 		public string ThirdDog { get; set; }
 
@@ -47,6 +49,8 @@ namespace GreyBase.Models
 		public string ThirdIsp { get; set; }
 
 
+		public string ForthPos { get; set; }
+
 		public string ForthDog { get; set; }
 
 		public string ForthBsp { get; set; }
@@ -54,12 +58,16 @@ namespace GreyBase.Models
 		public string ForthIsp { get; set; }
 
 
+		public string FifthPos { get; set; }
+
 		public string FifthDog { get; set; }
 
 		public string FifthBsp { get; set; }
 
 		public string FifthIsp { get; set; }
 
+
+		public string SixthPos { get; set; }
 
 		public string SixthDog { get; set; }
 
