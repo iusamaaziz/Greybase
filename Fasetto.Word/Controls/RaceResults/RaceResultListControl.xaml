@@ -10,9 +10,11 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Border
+        Height="450"
+        VerticalAlignment="Bottom"
         BorderThickness="1"
         CornerRadius="5"
-        DataContext="{x:Static local:RaceResultListDesignModel.Instance}" Height="450" VerticalAlignment="Bottom">
+        DataContext="{x:Static local:RaceResultListDesignModel.Instance}">
         <Border.Resources>
             <DataTemplate x:Key="DogColumn">
                 <StackPanel Margin="2,0" Orientation="Horizontal">

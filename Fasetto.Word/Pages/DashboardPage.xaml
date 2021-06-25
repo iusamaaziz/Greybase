@@ -21,7 +21,7 @@
                 VerticalAlignment="Top"
                 Background="{StaticResource BackgroundDarkBrush}"
                 UniformCornerRadius="3">
-                <local:RaceResultListControl Margin="0,3" />
+                <local:RaceResultListHorizontalControl Margin="0,3" />
             </materialDesign:Card>
 
         </Grid>

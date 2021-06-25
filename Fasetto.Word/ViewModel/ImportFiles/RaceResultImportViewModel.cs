@@ -114,7 +114,7 @@ namespace GreyBase
 					string[] time = complete.Split(' ');
 
 					string s = $"{dt.Rows[i][0].ToString().Split(' ')?.First()} {time?.First()}";
-					DateTime t = DateTime.ParseExact(s, "M/dd/yyyy HH:mm", CultureInfo.InvariantCulture);
+					DateTime t = DateTime.ParseExact(s, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
 
 					RaceResultImportModel c = new RaceResultImportModel()
 					{
