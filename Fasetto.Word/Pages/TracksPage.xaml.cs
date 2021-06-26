@@ -23,6 +23,8 @@ namespace GreyBase
 		public TracksPage()
 		{
 			InitializeComponent();
+
+			this.DataContext = new TrackListViewModel();
 		}
 	}
 }

@@ -19,7 +19,9 @@ namespace GreyBase
 
 		public string Name { get; set; }
 
-		public List<Race> Races { get; set; }
+		public List<TrackMeetingRacesViewModel> Races { get; set; }
+
+		//public TrackMeetingRacesViewModel Races { get; set; }
 
 		public bool RacesVisible { get; set; } = false;
 

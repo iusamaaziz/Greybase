@@ -55,18 +55,14 @@ namespace GreyBase.ValueConvertors
 					Distance = item.Distance,
 					Grade = item.Grade,
 					Track = track,
-					Traps = new List<RaceTrap>
-					{
-						new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = item.FirstPos },
-						new RaceTrap { RaceCode = raceCode, Greyhound = g2, Trap = item.SecondPos },
-						new RaceTrap { RaceCode = raceCode, Greyhound = g3, Trap = item.ThirdPos },
-						new RaceTrap { RaceCode = raceCode, Greyhound = g4, Trap = item.ForthDog },
-						new RaceTrap { RaceCode = raceCode, Greyhound = g5, Trap = item.FifthDog },
-						new RaceTrap { RaceCode = raceCode, Greyhound = g6, Trap = item.SixthDog }
-					}
+					First = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = "Trap1" },
+					Second = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = "Trap2" },
+					Third = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = "Trap3" },
+					Forth = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = "Trap4" },
+					Fifth = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = "Trap5" },
+					Sixth = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = "Trap6" }
 				};
 
-				Database.RaceTraps.AddRange(race.Traps);
 				if (!Database.Races.Exists(r => r.RaceCode == race.RaceCode))
 					Database.Races.Add(race);
 

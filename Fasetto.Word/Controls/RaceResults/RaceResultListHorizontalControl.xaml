@@ -10,9 +10,9 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Border
+        d:DataContext="{x:Static local:TrackDesignModel.Instance}"
         BorderThickness="1"
-        CornerRadius="5"
-        DataContext="{x:Static local:TrackMeetingRacesDesignModel.Instance}">
+        CornerRadius="5">
 
 
         <Border.Resources>
@@ -33,7 +33,7 @@
                     <!--  Greyhound Name  -->
                     <TextBlock
                         Padding="3"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
                         Text="{Binding First.Greyhound.Name}"
@@ -59,7 +59,7 @@
                     <!--  Greyhound Name  -->
                     <TextBlock
                         Padding="3"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
                         Text="{Binding Second.Greyhound.Name}"
@@ -85,7 +85,7 @@
                     <!--  Greyhound Name  -->
                     <TextBlock
                         Padding="3"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
                         Text="{Binding Third.Greyhound.Name}"
@@ -111,7 +111,7 @@
                     <!--  Greyhound Name  -->
                     <TextBlock
                         Padding="3"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
                         Text="{Binding Forth.Greyhound.Name}"
@@ -137,7 +137,7 @@
                     <!--  Greyhound Name  -->
                     <TextBlock
                         Padding="3"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
                         Text="{Binding Fifth.Greyhound.Name}"
@@ -163,7 +163,7 @@
                     <!--  Greyhound Name  -->
                     <TextBlock
                         Padding="3"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         FontSize="{StaticResource FontSizeSmall}"
                         Foreground="{StaticResource ForegroundLightBrush}"
                         Text="{Binding Sixth.Greyhound.Name}"
@@ -186,16 +186,16 @@
                     VerticalAlignment="Center"
                     Foreground="{StaticResource HeaderMainBrush}"
                     Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                    Text="{Binding Track}" />
+                    Text="{Binding Name}" />
 
-                <TextBlock
+                <!--<TextBlock
                     Grid.Column="1"
                     Margin="15,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Foreground="{StaticResource HeaderMainBrush}"
                     Style="{StaticResource HeaderText}"
-                    Text="{Binding Date, StringFormat='dd/MM/yyyy'}" />
+                    Text="{Binding Date, StringFormat='dd/MM/yyyy'}" />-->
 
             </StackPanel>
 
@@ -210,8 +210,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Width="Auto"
-                        Binding="{Binding Time, StringFormat='hh:mm'}"
-                        Header="Time"
+                        Binding="{Binding Date, StringFormat='dd/MM/yyyy hh:mm'}"
+                        Header="Date"
                         IsReadOnly="True" />
                     <DataGridTextColumn
                         Width="Auto"
@@ -220,13 +220,8 @@
                         IsReadOnly="True" />
                     <DataGridTextColumn
                         Width="Auto"
-                        Binding="{Binding Gd}"
+                        Binding="{Binding Grade}"
                         Header="Gd"
-                        IsReadOnly="True" />
-                    <DataGridTextColumn
-                        Width="Auto"
-                        Binding="{Binding Gg}"
-                        Header="Gg"
                         IsReadOnly="True" />
                     <DataGridTemplateColumn
                         Width="Auto"

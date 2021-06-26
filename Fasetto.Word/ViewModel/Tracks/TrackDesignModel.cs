@@ -24,6 +24,7 @@ namespace GreyBase
 
 		public TrackDesignModel()
 		{
+			/*
 			Name = "Crayford";
 			Races = new List<Shared.Race>
 			{
@@ -33,12 +34,11 @@ namespace GreyBase
 					Grade = "OA",
 					Track = new Shared.Track{Name = "Crayford"},
 					Distance = "350m", RaceCode = "Cray",
-					Traps = new List<RaceTrap>
+					First = new RaceTrap
 					{
-						new RaceTrap
-						{
-							RaceCode = "Cray",
-							Greyhound = new Greyhound
+						RaceCode = "Cray",
+						Trap = "Trap1",
+						Greyhound = new Greyhound
 							{
 								Name = "Ballymac Lydia",
 								Dob = DateTime.Now,
@@ -56,57 +56,58 @@ namespace GreyBase
 								Kick = 300,
 								RealGrade = "OA",
 								Rating = "5"
-							},
-							Trap = "Trap1"
-						},
-						new RaceTrap
+							}
+					},
+					Second = new RaceTrap
+					{
+						RaceCode = "Cray",
+						Greyhound = new Greyhound
 						{
-							RaceCode = "Cray",
-							Greyhound = new Greyhound
-							{
-								Name = "Ballymac Lydia",
-								Dob = DateTime.Now,
-								Color = "Black",
-								RPID = "527890",
-								Sire = "Pinpoint Maxi",
-								Dam = "Moyar Kite",
-								Sex = "Bitch",
+							Name = "Ballymac Lydia",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
 
-								Trainer = new Trainer { Name = "J W Gaskin" },
+							Trainer = new Trainer { Name = "J W Gaskin" },
 
-								IdealTrap = 1.0m,
-								FirstBendTrap = 2.25m,
-								BackStraight = 120,
-								Kick = 300,
-								RealGrade = "OA",
-								Rating = "5"
-							},
-							Trap = "Trap2"
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
 						},
-						new RaceTrap
+						Trap = "Trap2"
+					},
+					Third =
+					new RaceTrap
+					{
+						RaceCode = "Cray",
+						Greyhound = new Greyhound
 						{
-							RaceCode = "Cray",
-							Greyhound = new Greyhound
-							{
-								Name = "Ballymac Lydia",
-								Dob = DateTime.Now,
-								Color = "Black",
-								RPID = "527890",
-								Sire = "Pinpoint Maxi",
-								Dam = "Moyar Kite",
-								Sex = "Bitch",
+							Name = "Ballymac Lydia",
+							Dob = DateTime.Now,
+							Color = "Black",
+							RPID = "527890",
+							Sire = "Pinpoint Maxi",
+							Dam = "Moyar Kite",
+							Sex = "Bitch",
 
-								Trainer = new Trainer { Name = "J W Gaskin" },
+							Trainer = new Trainer { Name = "J W Gaskin" },
 
-								IdealTrap = 1.0m,
-								FirstBendTrap = 2.25m,
-								BackStraight = 120,
-								Kick = 300,
-								RealGrade = "OA",
-								Rating = "5"
-							},
-							Trap = "Trap3"
+							IdealTrap = 1.0m,
+							FirstBendTrap = 2.25m,
+							BackStraight = 120,
+							Kick = 300,
+							RealGrade = "OA",
+							Rating = "5"
 						},
+						Trap = "Trap3"
+					},
+					Forth =
 						new RaceTrap
 						{
 							RaceCode = "Cray",
@@ -130,44 +131,11 @@ namespace GreyBase
 								Rating = "5"
 							},
 							Trap = "Trap4"
-						}
-					}
-				},
-				new Shared.Race
-				{
-					Date = DateTime.Now,
-					Grade = "OA",
-					Track = new Shared.Track{Name = "Crayford"},
-					Distance = "350m", RaceCode = "Romf",
-					Traps = new List<RaceTrap>
-					{
-						new RaceTrap
-						{
-							RaceCode = "Romf",
-							Greyhound = new Greyhound
-							{
-								Name = "Ballymac Lydia",
-								Dob = DateTime.Now,
-								Color = "Black",
-								RPID = "527890",
-								Sire = "Pinpoint Maxi",
-								Dam = "Moyar Kite",
-								Sex = "Bitch",
-
-								Trainer = new Trainer { Name = "J W Gaskin" },
-
-								IdealTrap = 1.0m,
-								FirstBendTrap = 2.25m,
-								BackStraight = 120,
-								Kick = 300,
-								RealGrade = "OA",
-								Rating = "5"
-							},
-							Trap = "Trap1"
 						},
+					Fifth =
 						new RaceTrap
 						{
-							RaceCode = "Romf",
+							RaceCode = "Cray",
 							Greyhound = new Greyhound
 							{
 								Name = "Ballymac Lydia",
@@ -187,11 +155,12 @@ namespace GreyBase
 								RealGrade = "OA",
 								Rating = "5"
 							},
-							Trap = "Trap2"
+							Trap = "Trap5"
 						},
+					Sixth =
 						new RaceTrap
 						{
-							RaceCode = "Romf",
+							RaceCode = "Cray",
 							Greyhound = new Greyhound
 							{
 								Name = "Ballymac Lydia",
@@ -211,42 +180,20 @@ namespace GreyBase
 								RealGrade = "OA",
 								Rating = "5"
 							},
-							Trap = "Trap3"
-						},
-						new RaceTrap
-						{
-							RaceCode = "Romf",
-							Greyhound = new Greyhound
-							{
-								Name = "Ballymac Lydia",
-								Dob = DateTime.Now,
-								Color = "Black",
-								RPID = "527890",
-								Sire = "Pinpoint Maxi",
-								Dam = "Moyar Kite",
-								Sex = "Bitch",
-
-								Trainer = new Trainer { Name = "J W Gaskin" },
-
-								IdealTrap = 1.0m,
-								FirstBendTrap = 2.25m,
-								BackStraight = 120,
-								Kick = 300,
-								RealGrade = "OA",
-								Rating = "5"
-							},
-							Trap = "Trap4"
-						}
+							Trap = "Trap6"
 					}
 				}
 			};
+
+			*/
 		}
-
-		#endregion
-
-		#region Private Properties
-
-
-		#endregion
 	}
+
+	#endregion
+
+	#region Private Properties
+
+
+	#endregion
 }
+

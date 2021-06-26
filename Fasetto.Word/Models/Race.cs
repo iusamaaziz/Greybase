@@ -23,7 +23,12 @@ namespace GreyBase.Shared
 
 		public Track Track { get; set; }
 
-		public ICollection<RaceTrap> Traps { get; set; }
+		public RaceTrap First { get; set; }
+		public RaceTrap Second { get; set; }
+		public RaceTrap Third { get; set; }
+		public RaceTrap Forth { get; set; }
+		public RaceTrap Fifth { get; set; }
+		public RaceTrap Sixth { get; set; }
 
 		#endregion
 
@@ -31,7 +36,6 @@ namespace GreyBase.Shared
 
 		public Race()
 		{
-			Traps = new HashSet<RaceTrap>();
 		}
 
 		#endregion

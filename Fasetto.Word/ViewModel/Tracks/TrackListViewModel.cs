@@ -15,7 +15,7 @@ namespace GreyBase
 	{
 		#region Public Properties
 
-		public List<Track> Tracks { get; set; }
+		public List<Track> Tracks { get; set; } = Database.Tracks;
 
 		#endregion
 
