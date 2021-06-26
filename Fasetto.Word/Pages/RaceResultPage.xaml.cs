@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using GreyBase.Shared;
-using GreyBase.ViewModel.RaceResults;
 
 namespace GreyBase
 {
@@ -28,7 +27,7 @@ namespace GreyBase
 			InitializeComponent();
 		}
 
-		public RaceResultPage(TrackMeetingRacesViewModel race)
+		public RaceResultPage(TrackMeetingRacesViewModel race) : base()
 		{
 			InitializeComponent();
 

@@ -185,9 +185,7 @@
     <Compile Include="ViewModel\RaceCards\RaceCardListDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardResultRowViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardListViewModel.cs" />
-    <Compile Include="ViewModel\RaceResults\RaceResultListDesignModel.cs" />
     <Compile Include="ViewModel\RaceResults\RaceResultListViewModel.cs" />
-    <Compile Include="ViewModel\RaceResults\TrackMeetingRacesDesignModel.cs" />
     <Compile Include="ViewModel\RaceResults\TrackMeetingRacesViewModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuItemDesignModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuListDesignModel.cs" />

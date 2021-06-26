@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using GreyBase.Shared;
-using GreyBase.ViewModel.RaceResults;
 
 namespace GreyBase
 {
