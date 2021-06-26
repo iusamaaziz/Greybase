@@ -24,5 +24,12 @@ namespace GreyBase
 		{
 			InitializeComponent();
 		}
+
+		public GreyhoundProfilePage(GreyhoundProfileViewModel viewModel)
+		{
+			InitializeComponent();
+
+			this.DataContext = viewModel;
+		}
 	}
 }

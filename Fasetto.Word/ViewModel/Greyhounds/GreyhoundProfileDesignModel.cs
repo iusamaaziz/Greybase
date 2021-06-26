@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GreyBase.Shared;
+
 namespace GreyBase
 {
 	public class GreyhoundProfileDesignModel : GreyhoundProfileViewModel
@@ -12,7 +14,7 @@ namespace GreyBase
 		public static GreyhoundProfileDesignModel Instance => new GreyhoundProfileDesignModel();
 		public GreyhoundProfileDesignModel()
 		{
-			Greyhound = new GreyhoundProfileModel
+			Greyhound = new Greyhound
 			{
 				Name = "Ballymac Lydia",
 				Dob = DateTime.Now,
@@ -22,7 +24,7 @@ namespace GreyBase
 				Dam = "Moyar Kite",
 				Sex = "Bitch",
 
-				Trainer = new TrainerModel { Name = "J W Gaskin" },
+				Trainer = new Trainer { Name = "J W Gaskin" },
 
 				IdealTrap = 1.0m,
 				FirstBendTrap = 2.25m,

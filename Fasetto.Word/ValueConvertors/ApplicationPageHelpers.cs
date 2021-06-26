@@ -4,6 +4,7 @@ using GreyBase;
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Windows.Controls;
 
 namespace GreyBase
 {
@@ -18,11 +19,13 @@ namespace GreyBase
 		/// <param name="page"></param>
 		/// <param name="viewModel"></param>
 		/// <returns></returns>
-		public static BasePage ToBasePage(this ApplicationPage page, object viewModel = null)
+		public static Page ToBasePage(this ApplicationPage page, object viewModel = null)
 		{
 			// Find the appropriate page
 			switch (page)
 			{
+				//case ApplicationPage.Greyhound:
+				//	return new GreyhoundProfilePage(viewModel as GreyhoundProfileViewModel);
 				//case ApplicationPage.Login:
 				//    return new LoginPage(viewModel as LoginViewModel);
 

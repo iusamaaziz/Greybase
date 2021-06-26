@@ -14,8 +14,8 @@ namespace GreyBase
 		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
 			return parameter == null
-				? (bool)value ? Visibility.Hidden : Visibility.Visible
-				: (object)((bool)value ? Visibility.Visible : Visibility.Hidden);
+				? (bool)value ? Visibility.Collapsed : Visibility.Visible
+				: (object)((bool)value ? Visibility.Visible : Visibility.Collapsed);
 		}
 
 		public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

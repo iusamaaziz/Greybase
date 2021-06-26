@@ -23,13 +23,13 @@ namespace GreyBase
 
 		//public TrackMeetingRacesViewModel Races { get; set; }
 
-		public bool RacesVisible { get; set; } = false;
+		public bool RacesVisible { get; set; }
 
 		#endregion
 
 		#region Constructor
 
-		public TrackViewModel()
+		public TrackViewModel() : base()
 		{
 			RacesVisibilityCommand = new RelayCommand(SwitchVisibility);
 		}

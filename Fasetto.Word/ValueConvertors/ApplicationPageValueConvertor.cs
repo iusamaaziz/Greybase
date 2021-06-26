@@ -27,7 +27,7 @@ namespace GreyBase
 				case ApplicationPage.Import:
 					return new ImportFilePage();
 				case ApplicationPage.Greyhound:
-					return new GreyhoundProfilePage();
+					return parameter == null ? new GreyhoundProfilePage() : new GreyhoundProfilePage(parameter as GreyhoundProfileViewModel);
 				case ApplicationPage.Tracks:
 					return new TracksPage();
 				case ApplicationPage.RaceCard:

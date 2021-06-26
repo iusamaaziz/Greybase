@@ -14,7 +14,14 @@ namespace GreyBase
 	{
 		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			return Application.Current.FindResource(value as string);
+			try
+			{
+				return Application.Current.FindResource(value as string);
+			}
+			catch (Exception)
+			{
+				return Application.Current.FindResource("NotFountIcon");
+			}
 		}
 
 		public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

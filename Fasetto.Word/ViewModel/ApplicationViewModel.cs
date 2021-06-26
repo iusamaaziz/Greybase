@@ -23,7 +23,7 @@ namespace GreyBase.ViewModel
 		/// <summary>
 		/// True if the side menu should be shown
 		/// </summary>
-		public bool SideMenuVisible { get; set; } = true;
+		public bool SideMenuVisible { get; set; } = false;
 
 		/// <summary>
 		/// The view model to use for the current page when the CurrentPage changes
@@ -46,6 +46,11 @@ namespace GreyBase.ViewModel
 			CurrentPageViewModel = viewModel;
 			SideMenuListViewModel.Items.ForEach(a => a.IsActive = false);
 			((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = page;
+
+			if (viewModel != null)
+			{
+				((MainWindow)Application.Current.MainWindow).MainFrame.Content = new ApplicationPageValueConvertor().Convert(page, null, viewModel, null);
+			}
 			// Set the current page
 			//CurrentPage = page;
 

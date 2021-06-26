@@ -1,109 +1,109 @@
 ﻿<UserControl
-    x:Class="GreyBase.SideMenuControl"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:GreyBase"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    MaxWidth="250"
-    MaxHeight="50"
-    d:DesignHeight="40"
-    d:DesignWidth="250"
-    mc:Ignorable="d">
+	x:Class="GreyBase.SideMenuControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:GreyBase"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	MaxWidth="250"
+	MaxHeight="50"
+	d:DesignHeight="40"
+	d:DesignWidth="250"
+	mc:Ignorable="d">
 
 
-    <UserControl.Resources>
-        <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ContentControl}">
+	<UserControl.Resources>
+		<Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ContentControl}">
 
-                        <Border
-                            x:Name="background"
-                            Padding="0,0,8,0"
-                            Background="{StaticResource BackgroundDarkBrush}">
+						<Border
+							x:Name="background"
+							Padding="0,0,8,0"
+							Background="{StaticResource BackgroundDarkBrush}">
 
-                            <!--  Click to open message  -->
-                            <Border.InputBindings>
-                                <MouseBinding Command="{Binding OpenPageCommand}" MouseAction="LeftClick" />
-                            </Border.InputBindings>
+							<!--  Click to open message  -->
+							<Border.InputBindings>
+								<MouseBinding Command="{Binding OpenPageCommand}" MouseAction="LeftClick" />
+							</Border.InputBindings>
 
-                            <Grid x:Name="container" Background="Transparent">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
+							<Grid x:Name="container" Background="Transparent">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
 
-                                <!--  Side Bar  -->
-                                <Border
-                                    Grid.Column="0"
-                                    Width="4"
-                                    Background="WhiteSmoke"
-                                    Visibility="{Binding IsActive, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
-                                <!--  Button Icon  -->
-                                <Border Grid.Column="1" Padding="8">
-                                    <Border
-                                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
-                                        MinWidth="20"
-                                        Background="Transparent"
-                                        CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
-                                        <Image Source="{Binding IconPath}" />
-                                    </Border>
-                                </Border>
-                                <!--  Button Text  -->
-                                <TextBlock
-                                    Grid.Column="3"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"
-                                    FontSize="{StaticResource FontSizeSmall}"
-                                    Foreground="{StaticResource ForegroundLightBrush}"
-                                    Text="{Binding Name}" />
+								<!--  Side Bar  -->
+								<Border
+									Grid.Column="0"
+									Width="4"
+									Background="WhiteSmoke"
+									Visibility="{Binding IsActive, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
+								<!--  Button Icon  -->
+								<Border Grid.Column="1" Padding="8">
+									<Border
+										Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+										MinWidth="20"
+										Background="Transparent"
+										CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+										<Image Source="{Binding IconPath}" />
+									</Border>
+								</Border>
+								<!--  Button Text  -->
+								<TextBlock
+									Grid.Column="3"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Center"
+									FontSize="{StaticResource FontSizeSmall}"
+									Foreground="{StaticResource ForegroundLightBrush}"
+									Text="{Binding Name}" />
 
-                            </Grid>
+							</Grid>
 
-                        </Border>
+						</Border>
 
-                        <!--  Hover Animations  -->
-                        <ControlTemplate.Triggers>
-                            <DataTrigger Binding="{Binding IsActive}" Value="True">
-                                <Setter TargetName="background" Property="Background" Value="{StaticResource SelectedLightBlueBrush}" />
-                            </DataTrigger>
+						<!--  Hover Animations  -->
+						<ControlTemplate.Triggers>
+							<DataTrigger Binding="{Binding IsActive}" Value="True">
+								<Setter TargetName="background" Property="Background" Value="{StaticResource SelectedLightBlueBrush}" />
+							</DataTrigger>
 
-                            <EventTrigger RoutedEvent="MouseEnter">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation
-                                            Storyboard.TargetName="container"
-                                            Storyboard.TargetProperty="Background.Color"
-                                            To="{StaticResource HoverVeryLightBlue}"
-                                            Duration="0:0:0.3" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="MouseLeave">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation
-                                            Storyboard.TargetName="container"
-                                            Storyboard.TargetProperty="Background.Color"
-                                            To="Transparent"
-                                            Duration="0:0:0.3" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="container" Property="Background" Value="{StaticResource HoverDarkBrush}" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </UserControl.Resources>
+							<EventTrigger RoutedEvent="MouseEnter">
+								<BeginStoryboard>
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetName="container"
+											Storyboard.TargetProperty="Background.Color"
+											To="{StaticResource HoverVeryLightBlue}"
+											Duration="0:0:0.3" />
+									</Storyboard>
+								</BeginStoryboard>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="MouseLeave">
+								<BeginStoryboard>
+									<Storyboard>
+										<ColorAnimation
+											Storyboard.TargetName="container"
+											Storyboard.TargetProperty="Background.Color"
+											To="Transparent"
+											Duration="0:0:0.3" />
+									</Storyboard>
+								</BeginStoryboard>
+							</EventTrigger>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter TargetName="container" Property="Background" Value="{StaticResource HoverDarkBrush}" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
 
-    <!--  Problem, adding DataContext="{x:Static local:SideMenuItemDesignModel.Instance}" displays incorrect  -->
-    <ContentControl Style="{StaticResource ContentStyle}" />
+	<!--  Problem, adding DataContext="{x:Static local:SideMenuItemDesignModel.Instance}" displays incorrect  -->
+	<ContentControl Style="{StaticResource ContentStyle}" />
 
 
 </UserControl>

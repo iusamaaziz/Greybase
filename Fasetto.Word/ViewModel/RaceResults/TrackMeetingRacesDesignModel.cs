@@ -16,23 +16,6 @@ namespace GreyBase
 
 		public TrackMeetingRacesDesignModel()
 		{
-			Races = new List<Shared.Race>
-			{
-				new Shared.Race
-				{
-					Date = DateTime.Now,
-					Grade = "OA",
-					Track = new Shared.Track{Name = "Crayford"},
-					Distance = "350m", RaceCode = "Cray",
-				},
-				new Shared.Race
-				{
-					Date = DateTime.Now,
-					Grade = "OA",
-					Track = new Shared.Track{Name = "Crayford"},
-					Distance = "350m", RaceCode = "Romf",
-				}
-			};
 		}
 	}
 }

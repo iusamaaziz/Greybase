@@ -182,7 +182,6 @@
     <Compile Include="ViewModel\RaceCards\RaceCardListDesignModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardResultRowViewModel.cs" />
     <Compile Include="ViewModel\RaceCards\RaceCardListViewModel.cs" />
-    <Compile Include="ViewModel\RaceResults\MeetingRaceModel.cs" />
     <Compile Include="ViewModel\RaceResults\RaceResultListDesignModel.cs" />
     <Compile Include="ViewModel\RaceResults\RaceResultListViewModel.cs" />
     <Compile Include="ViewModel\RaceResults\TrackMeetingRacesDesignModel.cs" />
@@ -313,6 +312,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Images\Icons\icons8_not_applicable_50px.png" />
     <Resource Include="Images\Icons\icons8_expand_arrow_48px.png" />
     <Resource Include="Images\Icons\icons8_collapse_arrow_48px.png" />
     <Resource Include="Images\Icons\icons8_browse_folder_24px.png" />
