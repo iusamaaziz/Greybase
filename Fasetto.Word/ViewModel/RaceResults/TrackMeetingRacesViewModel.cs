@@ -51,7 +51,7 @@ namespace GreyBase.ViewModel.RaceResults
 
 		public void OpenRaceResult(object race)
 		{
-
+			IoC.Application.GoToPage(DataModels.ApplicationPage.RaceResult, this);
 		}
 
 		#endregion

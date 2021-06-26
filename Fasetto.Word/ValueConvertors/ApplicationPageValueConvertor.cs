@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using GreyBase.DataModels;
+using GreyBase.ViewModel.RaceResults;
 
 namespace GreyBase
 {
@@ -28,6 +29,8 @@ namespace GreyBase
 					return new ImportFilePage();
 				case ApplicationPage.Greyhound:
 					return parameter == null ? new GreyhoundProfilePage() : new GreyhoundProfilePage(parameter as GreyhoundProfileViewModel);
+				case ApplicationPage.RaceResult:
+					return parameter == null ? new RaceResultPage() : new RaceResultPage(parameter as TrackMeetingRacesViewModel);
 				case ApplicationPage.Tracks:
 					return new TracksPage();
 				case ApplicationPage.RaceCard:

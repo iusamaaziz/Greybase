@@ -61,7 +61,7 @@ namespace GreyBase
 					IoC.Application.GoToPage(ApplicationPage.Tracks);
 					break;
 				default:
-					IsActive = false;
+					IsActive = true;
 					break;
 			}
 			IsActive = true;

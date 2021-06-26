@@ -23,7 +23,7 @@ namespace GreyBase.ViewModel
 		/// <summary>
 		/// True if the side menu should be shown
 		/// </summary>
-		public bool SideMenuVisible { get; set; } = false;
+		public bool SideMenuVisible { get; set; } = true;
 
 		/// <summary>
 		/// The view model to use for the current page when the CurrentPage changes
