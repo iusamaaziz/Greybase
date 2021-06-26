@@ -57,6 +57,9 @@ namespace GreyBase
 				case "Greyhounds":
 					IoC.Application.GoToPage(ApplicationPage.Greyhound);
 					break;
+				case "Tracks":
+					IoC.Application.GoToPage(ApplicationPage.Tracks);
+					break;
 				default:
 					IsActive = false;
 					break;

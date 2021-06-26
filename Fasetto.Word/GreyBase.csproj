@@ -120,17 +120,25 @@
     <Compile Include="Controls\SideMenu\SideMenuListControl.xaml.cs">
       <DependentUpon>SideMenuListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Tracks\TrackControl.xaml.cs">
+      <DependentUpon>TrackControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataModels\ApplicationPage.cs" />
     <Compile Include="DataModels\ElementHorizontalAlignment.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
     <Compile Include="IOC\Base\IoC.cs" />
     <Compile Include="IOC\Interfaces\IUIManager.cs" />
     <Compile Include="IOC\UIManager.cs" />
+    <Compile Include="Models\Greyhound.cs" />
     <Compile Include="Models\GreyhoundTrapModel.cs" />
+    <Compile Include="Models\Race.cs" />
     <Compile Include="Models\RaceDetailsModel.cs" />
     <Compile Include="Models\RaceResultDataModel.cs" />
     <Compile Include="Models\RaceResultImportModel.cs" />
     <Compile Include="Models\RaceResultModel.cs" />
+    <Compile Include="Models\RaceTrap.cs" />
+    <Compile Include="Models\Track.cs" />
+    <Compile Include="Models\Trainer.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
@@ -141,10 +149,18 @@
     <Compile Include="Pages\ImportFilePage.xaml.cs">
       <DependentUpon>ImportFilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RaceCardPage.xaml.cs">
+      <DependentUpon>RaceCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TracksPage.xaml.cs">
+      <DependentUpon>TracksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\Database.cs" />
     <Compile Include="ValueConvertors\ApplicationPageHelpers.cs" />
     <Compile Include="ValueConvertors\ApplicationPageValueConvertor.cs" />
     <Compile Include="ValueConvertors\BaseValueConvertor.cs" />
     <Compile Include="ValueConvertors\HorizontalAlignmentConverter.cs" />
+    <Compile Include="ValueConvertors\ImportHelper.cs" />
     <Compile Include="ValueConvertors\TrapToImageSourceConvertor.cs" />
     <Compile Include="ValueConvertors\StringRGBToBrushConvertor.cs" />
     <Compile Include="ValueConvertors\BooleanToVisibilityConvertor.cs" />
@@ -176,6 +192,10 @@
     <Compile Include="ViewModel\SideMenu\SideMenuListViewModel.cs" />
     <Compile Include="ViewModel\SideMenu\SideMenuItemViewModel.cs" />
     <Compile Include="Models\TrainerModel.cs" />
+    <Compile Include="ViewModel\Tracks\TrackDesignModel.cs" />
+    <Compile Include="ViewModel\Tracks\TrackListDesignModel.cs" />
+    <Compile Include="ViewModel\Tracks\TrackListViewModel.cs" />
+    <Compile Include="ViewModel\Tracks\TrackViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Page Include="Controls\RaceCards\GreyhoundRaceCardItemControl.xaml">
@@ -210,6 +230,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Tracks\TrackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -231,6 +255,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ImportFilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RaceCardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TracksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -277,6 +309,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Images\Icons\icons8_expand_arrow_48px.png" />
+    <Resource Include="Images\Icons\icons8_collapse_arrow_48px.png" />
     <Resource Include="Images\Icons\icons8_browse_folder_24px.png" />
     <Resource Include="Images\Icons\icons8_edit_profile_24px.png" />
     <Resource Include="Images\Icons\icons8_video_playlist_48px_1.png" />

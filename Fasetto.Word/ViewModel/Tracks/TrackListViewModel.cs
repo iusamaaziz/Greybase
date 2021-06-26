@@ -4,26 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreyBase.Shared
+using GreyBase.Shared;
+
+namespace GreyBase
 {
 	/// <summary>
-	/// To store which greyhound ran in which trap of a race
+	/// 
 	/// </summary>
-	public class RaceTrap
+	public class TrackListViewModel : BaseViewModel
 	{
 		#region Public Properties
 
-		public Race Race { get; set; }
-
-		public Greyhound Greyhound { get; set; }
-
-		public string Trap { get; set; }
+		public List<Track> Tracks { get; set; }
 
 		#endregion
 
 		#region Constructor
 
-		public RaceTrap()
+		public TrackListViewModel()
 		{
 		}
 

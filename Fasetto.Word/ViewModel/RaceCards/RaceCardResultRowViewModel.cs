@@ -9,7 +9,7 @@ namespace GreyBase
 	/// <summary>
 	/// Contains datagrid values for each RaceCard Item
 	/// </summary>
-	public class RaceCardResultRowViewModel : BaseViewModel
+	public class RaceCardResultRowViewModel
 	{
 		public DateTime Date { get; set; }
 

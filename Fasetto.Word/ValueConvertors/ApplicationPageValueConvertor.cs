@@ -28,6 +28,10 @@ namespace GreyBase
 					return new ImportFilePage();
 				case ApplicationPage.Greyhound:
 					return new GreyhoundProfilePage();
+				case ApplicationPage.Tracks:
+					return new TracksPage();
+				case ApplicationPage.RaceCard:
+					return new RaceCardPage();
 			}
 		}
 

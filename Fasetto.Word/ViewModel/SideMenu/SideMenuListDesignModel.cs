@@ -28,7 +28,7 @@ namespace GreyBase
 				},
 				new SideMenuItemViewModel
 				{
-					Name = "Races",
+					Name = "Race Cards",
 					IconPath = "pack://application:,,,/GreyBase;component/Images/Icons/icons8_report_file_128px.png",
 					IsActive = false
 				},
@@ -41,6 +41,12 @@ namespace GreyBase
 				new SideMenuItemViewModel
 				{
 					Name = "Import Files",
+					IconPath = "pack://application:,,,/GreyBase;component/Images/Icons/icons8_home_60px.png",
+					IsActive = false
+				},
+				new SideMenuItemViewModel
+				{
+					Name = "Tracks",
 					IconPath = "pack://application:,,,/GreyBase;component/Images/Icons/icons8_home_60px.png",
 					IsActive = false
 				}

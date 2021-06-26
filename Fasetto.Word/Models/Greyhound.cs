@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Navigation;
 
 namespace GreyBase.Shared
 {
@@ -51,6 +52,27 @@ namespace GreyBase.Shared
 		/// Can be $, $$, $$$
 		/// </summary>
 		public string Characters { get; set; }
+
+		public ICollection<RaceTrap> RaceTraps => Database.RaceTraps.Where(hell => hell.Greyhound.Id == Id).ToList();
+
+		public ICollection<Race> Races
+		{
+			get
+			{
+				var traps = Database.RaceTraps.Where(trap => trap.Greyhound.Id == Id);
+				var racesCodes = traps.Select(t => t.RaceCode).Distinct();
+				var races = new List<Race>();
+				foreach (var code in racesCodes)
+				{
+					var matching = Database.Races.Where(race => race.RaceCode == code).FirstOrDefault();
+					if (!races.Exists(r => r.RaceCode == code))
+					{
+						races.Add(matching);
+					}
+				}
+				return races;
+			}
+		}
 
 		#endregion
 

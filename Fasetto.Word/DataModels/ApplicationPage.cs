@@ -16,6 +16,7 @@ namespace GreyBase.DataModels
 		RaceCard,
 		RaceResult,
 		Import,
-		Greyhound
+		Greyhound,
+		Tracks
 	}
 }

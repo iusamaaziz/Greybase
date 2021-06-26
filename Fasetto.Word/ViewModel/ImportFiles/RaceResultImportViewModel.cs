@@ -15,6 +15,7 @@ using ExcelDataReader;
 
 using GreyBase.DataModels;
 using GreyBase.Models;
+using GreyBase.ValueConvertors;
 
 using Microsoft.Win32;
 
@@ -150,8 +151,9 @@ namespace GreyBase
 					Models.Add(c);
 				}
 				OnPropertyChanged(nameof(Models));
-				//runnerBindingSource.DataSource = customers;
 			}
+
+			ImportHelper.ConvertImport(Models.ToList());
 		}
 
 		#endregion
