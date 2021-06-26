@@ -8,7 +8,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	d:DataContext="{x:Static local:GreyhoundProfileDesignModel.Instance}"
 	d:DesignHeight="200"
-	d:DesignWidth="700"
+	d:DesignWidth="800"
 	mc:Ignorable="d">
 
 	<Border Background="{StaticResource MaterialDesignDarkSeparatorBackground}" CornerRadius="4">
@@ -72,11 +72,12 @@
 							FontWeight="Bold"
 							Style="{StaticResource HeaderText}"
 							Text="RPID:" />
-						<TextBlock
+						<TextBox
 							Padding="5"
 							VerticalAlignment="Center"
 							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource WordBlueBrush}"
+							Foreground="{StaticResource ForegroundLightBrush}"
+							Style="{StaticResource MaterialDesignTextBox}"
 							Text="{Binding RPID}" />
 
 					</StackPanel>
@@ -153,11 +154,12 @@
 							FontWeight="Bold"
 							Style="{StaticResource HeaderText}"
 							Text="Color:" />
-						<TextBlock
+						<TextBox
 							Padding="5"
 							VerticalAlignment="Center"
 							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource WordBlueBrush}"
+							Foreground="{StaticResource ForegroundLightBrush}"
+							Style="{StaticResource MaterialDesignTextBox}"
 							Text="{Binding Color}" />
 
 					</StackPanel>
@@ -177,12 +179,13 @@
 							FontWeight="Bold"
 							Style="{StaticResource HeaderText}"
 							Text="Sire:" />
-						<TextBlock
+						<TextBox
 							Padding="5"
 							VerticalAlignment="Center"
 							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource WordBlueBrush}"
-							Text="{Binding Greyhound.Sire}" />
+							Foreground="{StaticResource ForegroundLightBrush}"
+							Style="{StaticResource MaterialDesignTextBox}"
+							Text="{Binding Sire}" />
 
 					</StackPanel>
 
@@ -201,12 +204,13 @@
 							FontWeight="Bold"
 							Style="{StaticResource HeaderText}"
 							Text="Dam:" />
-						<TextBlock
+						<TextBox
 							Padding="5"
 							VerticalAlignment="Center"
 							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource WordBlueBrush}"
-							Text="{Binding Greyhound.Dam}" />
+							Foreground="{StaticResource ForegroundLightBrush}"
+							Style="{StaticResource MaterialDesignTextBox}"
+							Text="{Binding Dam}" />
 
 					</StackPanel>
 
@@ -225,12 +229,13 @@
 							FontWeight="Bold"
 							Style="{StaticResource HeaderText}"
 							Text="Sex:" />
-						<TextBlock
+						<TextBox
 							Padding="5"
 							VerticalAlignment="Center"
 							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource WordBlueBrush}"
-							Text="{Binding Greyhound.Sex}" />
+							Foreground="{StaticResource ForegroundLightBrush}"
+							Style="{StaticResource MaterialDesignTextBox}"
+							Text="{Binding Sex}" />
 
 					</StackPanel>
 
@@ -246,6 +251,8 @@
 				DockPanel.Dock="Top">
 				<Grid Background="{StaticResource MaterialDesignCardBackground}">
 					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
 						<ColumnDefinition Width="Auto" />
 						<ColumnDefinition Width="Auto" />
 						<ColumnDefinition Width="Auto" />
@@ -279,7 +286,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.IdealTrap}" />
+						Text="{Binding IdealTrap}" />
 
 
 
@@ -303,7 +310,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.FirstBendTrap}" />
+						Text="{Binding FirstBendTrap}" />
 
 
 					<!--  Backstraight  -->
@@ -327,7 +334,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.BackStraight}" />
+						Text="{Binding BackStraight}" />
 
 					<!--  Average Split  -->
 					<TextBlock
@@ -349,7 +356,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.AvgSplit}" />
+						Text="{Binding AvgSplit}" />
 
 
 					<!--  Kick  -->
@@ -374,7 +381,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.Kick}" />
+						Text="{Binding Kick}" />
 
 
 					<!--  RealGrade  -->
@@ -398,7 +405,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.RealGrade}" />
+						Text="{Binding RealGrade}" />
 
 
 					<!--  Rating  -->
@@ -422,7 +429,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.Rating}" />
+						Text="{Binding Rating}" />
 
 					<!--  Pace to Bend  -->
 					<TextBlock
@@ -446,7 +453,29 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Greyhound.PaceToBend}" />
+						Text="{Binding PaceToBend}" />
+
+					<!--  Pace to Bend  -->
+					<TextBlock
+						Grid.Column="8"
+						Margin="0,0,15,0"
+						Padding="10"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+						Text="Symbol" />
+					<TextBox
+						Grid.Column="9"
+						Padding="3"
+						VerticalAlignment="Center"
+						materialDesign:HintAssist.Hint="$$$"
+						materialDesign:ValidationAssist.UsePopup="True"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Characters}" />
 
 				</Grid>
 

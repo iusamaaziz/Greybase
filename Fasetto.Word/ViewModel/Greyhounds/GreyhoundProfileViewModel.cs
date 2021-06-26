@@ -19,7 +19,10 @@ namespace GreyBase
 
 		public GreyhoundProfileViewModel(Greyhound hound) : base()
 		{
-			Greyhound = hound;
+			//Greyhound = hound;
+
+			// Todo -- Remove connection and add reference.
+			Greyhound = Database.Greyhounds.Find(h => h.Name == hound.Name);
 		}
 
 	}

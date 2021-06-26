@@ -51,6 +51,11 @@ namespace GreyBase.ViewModel
 			{
 				((MainWindow)Application.Current.MainWindow).MainFrame.Content = new ApplicationPageValueConvertor().Convert(page, null, viewModel, null);
 			}
+			else
+			{
+				((MainWindow)Application.Current.MainWindow).MainFrame.Content = new ApplicationPageValueConvertor().Convert(page, null, null, null);
+			}
+
 			// Set the current page
 			//CurrentPage = page;
 

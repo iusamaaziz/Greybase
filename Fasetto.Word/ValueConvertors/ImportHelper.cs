@@ -39,12 +39,13 @@ namespace GreyBase.ValueConvertors
 				Greyhound g5 = new Greyhound { Name = item.FifthDog };
 				Greyhound g6 = new Greyhound { Name = item.SixthDog };
 
-				Database.Greyhounds.Add(g1);
-				Database.Greyhounds.Add(g2);
-				Database.Greyhounds.Add(g3);
-				Database.Greyhounds.Add(g4);
-				Database.Greyhounds.Add(g5);
-				Database.Greyhounds.Add(g6);
+				ImportHelper h = new ImportHelper();
+				h.AddGreyhoundToDb(g1);
+				h.AddGreyhoundToDb(g2);
+				h.AddGreyhoundToDb(g3);
+				h.AddGreyhoundToDb(g4);
+				h.AddGreyhoundToDb(g5);
+				h.AddGreyhoundToDb(g6);
 
 				string raceCode = $"{track.Name}{item.Date}";
 
@@ -76,6 +77,12 @@ namespace GreyBase.ValueConvertors
 
 		#region Private Properties
 
+		private void AddGreyhoundToDb(Greyhound hound)
+		{
+			if (Database.Greyhounds.Exists(h => h.Name == hound.Name))
+				return;
+			Database.Greyhounds.Add(hound);
+		}
 
 		#endregion
 	}
