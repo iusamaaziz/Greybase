@@ -21,6 +21,9 @@ namespace GreyBase.ViewModel.RaceResults
 		/// </summary>
 		public ICommand OpenGreyhoundProfileCommand { get; set; }
 
+		public ICommand OpenRaceDetailCommand { get; set; }
+
+
 		#endregion
 
 		#region Constructor
@@ -32,6 +35,8 @@ namespace GreyBase.ViewModel.RaceResults
 		{
 			// Create commands
 			OpenGreyhoundProfileCommand = new RelayParameterizedCommand(e => OpenGreyhoundProfile(e));
+			OpenRaceDetailCommand = new RelayParameterizedCommand(e => OpenRaceResult(e));
+
 		}
 
 		#endregion
@@ -42,6 +47,11 @@ namespace GreyBase.ViewModel.RaceResults
 		{
 			Greyhound hound = Database.Greyhounds.Find(h => h.Name == (sender as Greyhound).Name);
 			IoC.Application.GoToPage(DataModels.ApplicationPage.Greyhound, new GreyhoundProfileViewModel(hound));
+		}
+
+		public void OpenRaceResult(object race)
+		{
+
 		}
 
 		#endregion

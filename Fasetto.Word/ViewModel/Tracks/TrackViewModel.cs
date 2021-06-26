@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 using GreyBase.Shared;
+using GreyBase.ViewModel.Base;
 using GreyBase.ViewModel.RaceResults;
 
 namespace GreyBase
@@ -52,6 +53,8 @@ namespace GreyBase
 			// Toggle menu visibility
 			RacesVisible ^= true;
 		}
+
+
 
 		#endregion
 	}

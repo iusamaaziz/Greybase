@@ -202,34 +202,19 @@
 				</StackPanel>
 
 			</DataTemplate>
+
+			<DataTemplate x:Key="Details">
+				<Button
+					Command="{Binding OpenRaceDetailCommand}"
+					CommandParameter="{Binding Race}"
+					Content="View"
+					FontSize="{StaticResource FontSizeSmall}"
+					Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
+
+			</DataTemplate>
 		</Border.Resources>
 
 		<DockPanel>
-
-			<!--<StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-
-			-->
-			<!--  Race Track  -->
-			<!--
-                <TextBlock
-                    Grid.Column="1"
-                    Margin="15,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Foreground="{StaticResource HeaderMainBrush}"
-                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                    Text="{Binding Name}" />
-
-                <TextBlock
-                    Grid.Column="1"
-                    Margin="15,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Foreground="{StaticResource HeaderMainBrush}"
-                    Style="{StaticResource HeaderText}"
-                    Text="{Binding Date, StringFormat='dd/MM/yyyy'}" />
-
-            </StackPanel>-->
 
 			<DataGrid
 				AutoGenerateColumns="False"
@@ -282,8 +267,8 @@
 						IsReadOnly="True" />
 					<DataGridTemplateColumn
 						Width="Auto"
-						CellTemplate="{StaticResource SixthPosition}"
-						Header="6th"
+						CellTemplate="{StaticResource Details}"
+						Header="Details"
 						IsReadOnly="True" />
 				</DataGrid.Columns>
 
