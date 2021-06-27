@@ -57,11 +57,19 @@
 				</DockPanel>
 			</materialDesign:Card>
 
-			<local:GreyhoundProfileControl
+			<!--  Greyhound Profile Popup  -->
+			<ScrollViewer
 				Grid.Row="1"
-				Margin="0,3"
-				DataContext="{Binding Greyhound}"
-				Visibility="{Binding ResultsVisible, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
+				local:AnimateSlideInFromBottomProperty.Value="{Binding ResultsVisible}"
+				HorizontalScrollBarVisibility="Auto">
+				<local:GreyhoundProfileControl
+					Grid.Row="1"
+					Margin="0,3"
+					DataContext="{Binding Greyhound}"
+					Visibility="{Binding ResultsVisible, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
+			</ScrollViewer>
+
+
 		</Grid>
 	</Border>
 </Page>
