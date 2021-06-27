@@ -70,7 +70,7 @@ namespace GreyBase.Shared
 						races.Add(matching);
 					}
 				}
-				return races;
+				return races.Take(6).OrderByDescending(p => p.Date).ToList();
 			}
 			set { }
 		}
