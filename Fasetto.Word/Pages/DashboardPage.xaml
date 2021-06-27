@@ -3,27 +3,65 @@
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
 	xmlns:local="clr-namespace:GreyBase"
 	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	Title="Dashboard"
 	d:DesignHeight="450"
 	d:DesignWidth="800"
+	Background="{StaticResource MaterialDesignDarkBackground}"
 	mc:Ignorable="d">
 
-	<Border Background="{StaticResource MaterialDesignDarkBackground}">
+	<Border Margin="20">
 		<Grid>
 
-			<!--  Race Result List  -->
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
 
 			<materialDesign:Card
-				Margin="50"
+				Margin="10"
 				VerticalAlignment="Top"
 				Background="{StaticResource BackgroundDarkBrush}"
 				UniformCornerRadius="3">
-				<local:RaceResultListControl Margin="0,3" />
+				<DockPanel>
+					<TextBlock
+						Padding="5"
+						HorizontalAlignment="Center"
+						DockPanel.Dock="Top"
+						FontSize="{StaticResource FontSizeRegular}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Text="Search Greyhound" />
+
+
+					<ComboBox
+						MinWidth="150"
+						Margin="3"
+						Padding="3"
+						HorizontalAlignment="Center"
+						materialDesign:HintAssist.Hint="Select Greyhound"
+						DockPanel.Dock="Top"
+						Foreground="{StaticResource MaterialDesignDarkForeground}"
+						ItemsSource="{Binding Greyhounds}"
+						SelectedItem="{Binding SelectedGreyhound}"
+						Style="{StaticResource MaterialDesignComboBox}"
+						Text="Select Greyhound">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="SelectionChanged">
+								<i:InvokeCommandAction Command="{Binding SearchGreyhoundCommand}" />
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</ComboBox>
+				</DockPanel>
 			</materialDesign:Card>
 
+			<local:GreyhoundProfileControl
+				Grid.Row="1"
+				Margin="0,3"
+				DataContext="{Binding Greyhound}"
+				Visibility="{Binding ResultsVisible, Converter={local:BooleanToVisibilityConvertor}, ConverterParameter=True}" />
 		</Grid>
 	</Border>
 </Page>

@@ -177,6 +177,7 @@
     <Compile Include="ViewModel\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModel\Greyhounds\GreyhoundProfileDesignModel.cs" />
     <Compile Include="ViewModel\Greyhounds\GreyhoundProfileViewModel.cs" />
+    <Compile Include="ViewModel\Greyhounds\SearchGreyhoundViewModel.cs" />
     <Compile Include="ViewModel\ImportFiles\RaceResultImportViewModel.cs" />
     <Compile Include="ViewModel\PopupMenu\BasePopupMenuViewModel.cs" />
     <Compile Include="ViewModel\PopupMenu\GreyhoundProfilePopupMenuViewModel.cs" />

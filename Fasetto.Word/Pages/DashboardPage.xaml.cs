@@ -23,6 +23,8 @@ namespace GreyBase
 		public DashboardPage()
 		{
 			InitializeComponent();
+
+			this.DataContext = new SearchGreyhoundViewModel();
 		}
 	}
 }
