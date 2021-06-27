@@ -47,7 +47,7 @@ namespace GreyBase.ValueConvertors
 				h.AddGreyhoundToDb(g5);
 				h.AddGreyhoundToDb(g6);
 
-				string raceCode = $"{track.Name}{item.Date}";
+				string raceCode = $"{track.Name.Substring(0, 4)}-{item.Date.ToString("dd")}{item.Date.ToString("MM")}{item.Date.ToString("yyyy")}-{item.Date.ToString("HH:mm")}";
 
 				Race race = new Race
 				{
@@ -56,16 +56,24 @@ namespace GreyBase.ValueConvertors
 					Distance = item.Distance,
 					Grade = item.Grade,
 					Track = track,
-					First = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = item.FirstPos },
-					Second = new RaceTrap { RaceCode = raceCode, Greyhound = g2, Trap = item.SecondPos },
-					Third = new RaceTrap { RaceCode = raceCode, Greyhound = g3, Trap = item.ThirdPos },
-					Forth = new RaceTrap { RaceCode = raceCode, Greyhound = g4, Trap = item.ForthPos },
-					Fifth = new RaceTrap { RaceCode = raceCode, Greyhound = g5, Trap = item.FifthPos },
-					Sixth = new RaceTrap { RaceCode = raceCode, Greyhound = g6, Trap = item.SixthPos }
+					First = new RaceTrap { RaceCode = raceCode, Greyhound = g1, Trap = item.FirstPos, BSP = item.FirstBsp, Grade = item.Grade, SP = item.FirstBsp },
+					Second = new RaceTrap { RaceCode = raceCode, Greyhound = g2, Trap = item.SecondPos, BSP = item.SecondBsp, Grade = item.Grade, SP = item.SecondIsp },
+					Third = new RaceTrap { RaceCode = raceCode, Greyhound = g3, Trap = item.ThirdPos, BSP = item.ThirdBsp, Grade = item.Grade, SP = item.ThirdIsp },
+					Forth = new RaceTrap { RaceCode = raceCode, Greyhound = g4, Trap = item.ForthPos, BSP = item.ForthBsp, Grade = item.Grade, SP = item.ForthIsp },
+					Fifth = new RaceTrap { RaceCode = raceCode, Greyhound = g5, Trap = item.FifthPos, BSP = item.FifthBsp, Grade = item.Grade, SP = item.FifthIsp },
+					Sixth = new RaceTrap { RaceCode = raceCode, Greyhound = g6, Trap = item.SixthPos, BSP = item.SixthIsp, Grade = item.Grade, SP = item.SixthIsp }
 				};
 
 				if (!Database.Races.Exists(r => r.RaceCode == race.RaceCode))
+				{
 					Database.Races.Add(race);
+					Database.RaceTraps.Add(race.First);
+					Database.RaceTraps.Add(race.Second);
+					Database.RaceTraps.Add(race.Third);
+					Database.RaceTraps.Add(race.Forth);
+					Database.RaceTraps.Add(race.First);
+					Database.RaceTraps.Add(race.Sixth);
+				}
 
 				track.Races.Add(race);
 				if (!Database.Tracks.Exists(t => t.Name == track.Name))

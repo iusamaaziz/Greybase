@@ -13,8 +13,7 @@
 
 	<Border
 		Margin="20"
-		CornerRadius="4"
-		DataContext="{Binding Greyhound}">
+		CornerRadius="4">
 		<local:GreyhoundProfileControl />
 	</Border>
 </Page>

@@ -15,6 +15,8 @@ namespace GreyBase.Shared
 
 		public string RaceCode { get; set; }
 
+		public string Track { get; set; }
+
 		public Greyhound Greyhound { get; set; }
 
 		public string Trap { get; set; }

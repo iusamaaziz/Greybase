@@ -227,7 +227,7 @@
 				<DataGrid.Columns>
 					<DataGridTextColumn
 						Width="Auto"
-						Binding="{Binding Race.Date, StringFormat='dd/MM/yyyy hh:mm'}"
+						Binding="{Binding Race.Date, StringFormat='dd/MM/yyyy HH:mm'}"
 						Header="Date"
 						IsReadOnly="True" />
 					<DataGridTextColumn

@@ -27,18 +27,16 @@ namespace GreyBase
 		public TrackListViewModel()
 		{
 			Tracks = new List<TrackViewModel>();
-			foreach (var item in Database.Tracks)
+			foreach (Track item in Database.Tracks)
 			{
 				var trackVm = new TrackViewModel { Name = item.Name, Races = new List<TrackMeetingRacesViewModel>() };
 				foreach (var race in item.Races)
 				{
-					trackVm.Races.Add(new TrackMeetingRacesViewModel { Race = race });
+					trackVm.Races.Add(new TrackMeetingRacesViewModel(race));
 				}
-				//Tracks.Add(new TrackViewModel { Name = item.Name, Races = item.Races.ToList() });
 				Tracks.Add(trackVm);
 			}
 		}
-
 
 
 		#endregion

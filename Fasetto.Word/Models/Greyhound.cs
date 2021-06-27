@@ -55,11 +55,11 @@ namespace GreyBase.Shared
 
 		public ICollection<RaceTrap> RaceTraps => Database.RaceTraps.Where(hell => hell.Greyhound.Id == Id).ToList();
 
-		public ICollection<Race> Races
+		public List<Race> Races
 		{
 			get
 			{
-				var traps = Database.RaceTraps.Where(trap => trap.Greyhound.Id == Id);
+				var traps = Database.RaceTraps.Where(trap => trap.Greyhound.Name == Name).Distinct();
 				var racesCodes = traps.Select(t => t.RaceCode).Distinct();
 				var races = new List<Race>();
 				foreach (var code in racesCodes)
@@ -72,6 +72,7 @@ namespace GreyBase.Shared
 				}
 				return races;
 			}
+			set { }
 		}
 
 		#endregion

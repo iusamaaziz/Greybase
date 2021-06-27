@@ -148,11 +148,19 @@ namespace GreyBase
 		/// </summary>
 		public TrackMeetingRacesViewModel()
 		{
-
+			Race = Database.Races.Find(k => k.RaceCode == Race.RaceCode);
 			// Create commands
 			OpenGreyhoundProfileCommand = new RelayParameterizedCommand(e => OpenGreyhoundProfile(e));
 			OpenRaceDetailCommand = new RelayParameterizedCommand(e => OpenRaceResult(e));
 
+		}
+
+		public TrackMeetingRacesViewModel(Race race)
+		{
+			Race = race;
+			// Create commands
+			OpenGreyhoundProfileCommand = new RelayParameterizedCommand(e => OpenGreyhoundProfile(e));
+			OpenRaceDetailCommand = new RelayParameterizedCommand(e => OpenRaceResult(e));
 		}
 
 		#endregion

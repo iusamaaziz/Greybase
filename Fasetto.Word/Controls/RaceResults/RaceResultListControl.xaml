@@ -139,7 +139,7 @@
 						Header="Cal Time" />
 					<DataGridTextColumn
 						Width="Auto"
-						Binding="{Binding Racecode}"
+						Binding="{Binding RaceCode}"
 						Header="Racecode"
 						IsReadOnly="True" />
 					<DataGridTextColumn

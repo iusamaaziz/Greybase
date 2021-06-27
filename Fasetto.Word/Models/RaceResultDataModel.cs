@@ -12,6 +12,8 @@ namespace GreyBase.Models
 	{
 		public string Position { get; set; }
 
+		public Race Race { get; set; }
+
 		public string RaceCode { get; set; }
 
 		public Greyhound Greyhound { get; set; }

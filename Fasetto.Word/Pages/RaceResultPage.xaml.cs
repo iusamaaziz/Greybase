@@ -30,7 +30,6 @@ namespace GreyBase
 		public RaceResultPage(TrackMeetingRacesViewModel race) : base()
 		{
 			InitializeComponent();
-
 			this.DataContext = race;
 		}
 	}

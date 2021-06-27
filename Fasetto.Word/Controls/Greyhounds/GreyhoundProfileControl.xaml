@@ -6,18 +6,35 @@
 	xmlns:local="clr-namespace:GreyBase"
 	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	d:DataContext="{x:Static local:GreyhoundProfileDesignModel.Instance}"
-	d:DesignHeight="200"
+	d:DesignHeight="400"
 	d:DesignWidth="800"
 	mc:Ignorable="d">
 
-	<Border Background="{StaticResource MaterialDesignDarkSeparatorBackground}" CornerRadius="4">
+	<Border
+		d:DataContext="{x:Static local:GreyhoundProfileViewModel.Instance}"
+		Background="{StaticResource MaterialDesignDarkSeparatorBackground}"
+		CornerRadius="4">
 		<Border.Effect>
 			<DropShadowEffect
 				BlurRadius="4"
 				ShadowDepth="2"
 				Color="{StaticResource HoverLightBlue}" />
 		</Border.Effect>
+		<Border.Resources>
+			<DataTemplate x:Key="TrapTemplate">
+				<!--  Trap Image  -->
+				<materialDesign:Card
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Grid.Column="1"
+					MaxWidth="23"
+					Margin="1"
+					ToolTip="Trap"
+					UniformCornerRadius="5">
+					<Image Source="{Binding Trap, Converter={local:TrapToImageSourceConvertor}}" />
+				</materialDesign:Card>
+			</DataTemplate>
+		</Border.Resources>
 		<DockPanel>
 			<TextBlock
 				Padding="5"
@@ -36,8 +53,13 @@
 				<Grid Background="{StaticResource MaterialDesignCardBackground}">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" MinWidth="70" />
 						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="70" />
 						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="70" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="70" />
 						<ColumnDefinition Width="Auto" />
 					</Grid.ColumnDefinitions>
 
@@ -48,196 +70,159 @@
 
 					<!--  Name  -->
 					<TextBlock
-						Grid.ColumnSpan="1"
+						Grid.ColumnSpan="2"
 						Padding="10"
-						HorizontalAlignment="Center"
+						HorizontalAlignment="Left"
 						FontSize="{StaticResource FontSizeRegular}"
 						Foreground="{StaticResource WordOrangeBrush}"
 						Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-						Text="{Binding Name}"
+						Text="{Binding Greyhound.Name}"
 						ToolTip="Name" />
 
 
 					<!--  RPID  -->
-					<StackPanel
-						Grid.Column="1"
-						Margin="0,0,15,0"
+					<TextBlock
+						Grid.Column="2"
+						Padding="5"
 						HorizontalAlignment="Left"
 						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							Padding="5"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="RPID:" />
-						<TextBox
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource ForegroundLightBrush}"
-							Style="{StaticResource MaterialDesignTextBox}"
-							Text="{Binding RPID}" />
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="RPID:" />
+					<TextBox
+						Grid.Column="3"
+						Padding="5"
+						VerticalAlignment="Center"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Greyhound.RPID}" />
 
-					</StackPanel>
 
 					<!--  DOB  -->
-					<StackPanel
-						Grid.Column="2"
-						Margin="0,0,15,0"
-						HorizontalAlignment="Left"
+					<TextBlock
+						Grid.Column="4"
+						Margin="5,0"
+						Padding="5"
 						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="DOB:" />
-						<TextBlock
-							Padding="5,0"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource ForegroundLightBrush}"
-							Text="{Binding Dob, StringFormat='dd-MM-yyyy'}" />
-
-					</StackPanel>
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="DOB:" />
+					<TextBox
+						Grid.Column="5"
+						Padding="5,0"
+						VerticalAlignment="Center"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Greyhound.Dob, StringFormat='dd-MM-yyyy'}" />
 
 					<!--  Trainer  -->
-					<StackPanel
-						Grid.Column="3"
-						Grid.ColumnSpan="2"
-						Margin="0,0,15,0"
-						HorizontalAlignment="Left"
+					<TextBlock
+						Grid.Column="6"
+						Margin="5,0"
 						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="Trained By:" />
-						<TextBox
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource WordGreenBrush}"
-							Text="{Binding Trainer.Name}" />
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="Trained By:" />
+					<TextBox
+						Grid.Column="7"
+						Padding="5"
+						VerticalAlignment="Center"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource WordGreenBrush}"
+						Text="{Binding Greyhound.Trainer.Name}" />
 
-						<!--  Edit Trainer  -->
-						<Button
-							Grid.Column="1"
-							Cursor="Pen"
-							Style="{StaticResource MaterialDesignToolForegroundButton}"
-							ToolTip="Edit">
-							<Image MaxHeight="20" Source="{StaticResource EditPersonIcon}" />
-						</Button>
-
-					</StackPanel>
+					<!--  Edit Trainer  -->
+					<Button
+						Grid.Column="8"
+						Cursor="Pen"
+						Style="{StaticResource MaterialDesignToolForegroundButton}"
+						ToolTip="Edit">
+						<Image MaxHeight="20" Source="{StaticResource EditPersonIcon}" />
+					</Button>
 
 					<!--  Sex  -->
-					<StackPanel
+					<TextBlock
 						Grid.Row="1"
-						Grid.Column="0"
-						Margin="0,0,15,0"
-						HorizontalAlignment="Left"
-						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							Padding="5"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="Color:" />
-						<TextBox
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource ForegroundLightBrush}"
-							Style="{StaticResource MaterialDesignTextBox}"
-							Text="{Binding Color}" />
-
-					</StackPanel>
-
-					<!--  Sire  -->
-					<StackPanel
+						Margin="5,0"
+						Padding="5"
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="Color:" />
+					<TextBox
 						Grid.Row="1"
 						Grid.Column="1"
-						Margin="0,0,15,0"
-						HorizontalAlignment="Left"
+						Padding="5"
 						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							Padding="5"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="Sire:" />
-						<TextBox
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource ForegroundLightBrush}"
-							Style="{StaticResource MaterialDesignTextBox}"
-							Text="{Binding Sire}" />
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Greyhound.Color}" />
 
-					</StackPanel>
-
-					<!--  Dam  -->
-					<StackPanel
+					<!--  Sire  -->
+					<TextBlock
 						Grid.Row="1"
 						Grid.Column="2"
-						Margin="0,0,15,0"
-						HorizontalAlignment="Left"
-						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							Padding="5"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="Dam:" />
-						<TextBox
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource ForegroundLightBrush}"
-							Style="{StaticResource MaterialDesignTextBox}"
-							Text="{Binding Dam}" />
-
-					</StackPanel>
-
-					<!--  Sex  -->
-					<StackPanel
+						Margin="5,0"
+						Padding="5"
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="Sire:" />
+					<TextBox
 						Grid.Row="1"
 						Grid.Column="3"
-						Margin="0,0,15,0"
-						HorizontalAlignment="Left"
+						Padding="5"
 						VerticalAlignment="Center"
-						Orientation="Horizontal">
-						<TextBlock
-							Margin="5,0"
-							Padding="5"
-							FontSize="{StaticResource FontSizeSmall}"
-							FontWeight="Bold"
-							Style="{StaticResource HeaderText}"
-							Text="Sex:" />
-						<TextBox
-							Padding="5"
-							VerticalAlignment="Center"
-							FontSize="{StaticResource FontSizeSmall}"
-							Foreground="{StaticResource ForegroundLightBrush}"
-							Style="{StaticResource MaterialDesignTextBox}"
-							Text="{Binding Sex}" />
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Greyhound.Sire}" />
 
-					</StackPanel>
+					<!--  Dam  -->
+					<TextBlock
+						Grid.Row="1"
+						Grid.Column="4"
+						Margin="5,0"
+						Padding="5"
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="Dam:" />
+					<TextBox
+						Grid.Row="1"
+						Grid.Column="5"
+						Padding="5"
+						VerticalAlignment="Center"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Greyhound.Dam}" />
+
+					<!--  Sex  -->
+					<TextBlock
+						Grid.Row="1"
+						Grid.Column="6"
+						Margin="5,0"
+						Padding="5"
+						FontSize="{StaticResource FontSizeSmall}"
+						FontWeight="Bold"
+						Style="{StaticResource HeaderText}"
+						Text="Sex:" />
+					<TextBox
+						Grid.Row="1"
+						Grid.Column="7"
+						Padding="5"
+						VerticalAlignment="Center"
+						FontSize="{StaticResource FontSizeSmall}"
+						Foreground="{StaticResource ForegroundLightBrush}"
+						Style="{StaticResource MaterialDesignTextBox}"
+						Text="{Binding Greyhound.Sex}" />
 
 				</Grid>
 
@@ -286,7 +271,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding IdealTrap}" />
+						Text="{Binding Greyhound.IdealTrap}" />
 
 
 
@@ -310,7 +295,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding FirstBendTrap}" />
+						Text="{Binding Greyhound.FirstBendTrap}" />
 
 
 					<!--  Backstraight  -->
@@ -334,7 +319,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding BackStraight}" />
+						Text="{Binding Greyhound.BackStraight}" />
 
 					<!--  Average Split  -->
 					<TextBlock
@@ -356,7 +341,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding AvgSplit}" />
+						Text="{Binding Greyhound.AvgSplit}" />
 
 
 					<!--  Kick  -->
@@ -381,7 +366,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Kick}" />
+						Text="{Binding Greyhound.Kick}" />
 
 
 					<!--  RealGrade  -->
@@ -405,7 +390,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding RealGrade}" />
+						Text="{Binding Greyhound.RealGrade}" />
 
 
 					<!--  Rating  -->
@@ -429,7 +414,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Rating}" />
+						Text="{Binding Greyhound.Rating}" />
 
 					<!--  Pace to Bend  -->
 					<TextBlock
@@ -453,7 +438,7 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding PaceToBend}" />
+						Text="{Binding Greyhound.PaceToBend}" />
 
 					<!--  Pace to Bend  -->
 					<TextBlock
@@ -475,10 +460,107 @@
 						FontSize="{StaticResource FontSizeSmall}"
 						Foreground="{StaticResource ForegroundLightBrush}"
 						Style="{StaticResource MaterialDesignTextBox}"
-						Text="{Binding Characters}" />
+						Text="{Binding Greyhound.Characters}" />
 
 				</Grid>
 
+			</Border>
+			<Border
+				Margin="0,3,0,0"
+				BorderThickness="1"
+				CornerRadius="4"
+				DockPanel.Dock="Top">
+
+				<DataGrid
+					AutoGenerateColumns="False"
+					CanUserAddRows="False"
+					CanUserDeleteRows="False"
+					DockPanel.Dock="Bottom"
+					ItemsSource="{Binding Results}"
+					Style="{StaticResource MaterialDesignDataGrid}">
+					<DataGrid.Columns>
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Race.Date, StringFormat='dd-MM-yyyy HH:mm'}"
+							Header="Date"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Race.Track.Name}"
+							Header="Track"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Race.Distance}"
+							Header="Distance"
+							IsReadOnly="True" />
+						<DataGridTemplateColumn
+							Width="Auto"
+							CellTemplate="{StaticResource TrapTemplate}"
+							Header="Trap"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Split}"
+							Header="Split"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Bends}"
+							Header="Bends"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Pos}"
+							Header="POS"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding DistanceBeaten}"
+							Header="Distance beaten"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Beat}"
+							Header="Beat/Beaten by"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Remarks}"
+							Header="Remarks"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding SP}"
+							Header="SP"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding BSP}"
+							Header="BSP"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Grade}"
+							Header="Grade"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding CalTime}"
+							Header="Cal Time"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Racecode}"
+							Header="Racecode"
+							IsReadOnly="True" />
+						<DataGridTextColumn
+							Width="Auto"
+							Binding="{Binding Notes}"
+							EditingElementStyle="{StaticResource MaterialDesignTextBox}"
+							Header="Notes" />
+					</DataGrid.Columns>
+				</DataGrid>
 			</Border>
 
 		</DockPanel>
